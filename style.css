@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Arbutus&family=Bubblegum+Sans&family=Bungee+Shade&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+:root {
+  /* COLORS */
+  /* FONTS */
+  /* SPACINGS */
+  --isc-margin-xs: 5px;
+  --isc-margin-s: 10px;
+  --isc-margin-m: 20px;
+  --isc-margin-l: 30px;
+  --isc-margin-xl: 50px;
+
+  --isc-padding-xs: 5px;
+  --isc-padding-s: 10px;
+  --isc-padding-m: 20px;
+  --isc-padding-l: 30px;
+  --isc-padding-xl: 50px;
+
+  --isc-gap-xs: 5px;
+  --isc-gap-s: 10px;
+  --isc-gap-m: 20px;
+  --isc-gap-l: 30px;
+  --isc-gap-xl: 50px;
+
+  /* display */
+  /* position */
+  /* flex properties */
+  /* border */
+  /* border radius */
+  /* box shadow */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
