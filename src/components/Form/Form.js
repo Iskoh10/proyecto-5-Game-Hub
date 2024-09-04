@@ -9,11 +9,11 @@ export const createForm = (sectionInfo) => {
   const h2 = document.createElement('h2');
   h2.textContent = 'Divertrix';
 
-  const h3 = document.createElement('h3');
-  h3.textContent = sectionInfo;
+  const h3Info = document.createElement('h3');
+  h3Info.textContent = sectionInfo;
 
   form.appendChild(h2);
-  form.appendChild(h3);
+  form.appendChild(h3Info);
 
   createInput({
     type: 'text',
@@ -35,21 +35,33 @@ export const createForm = (sectionInfo) => {
   });
 
   const h3Sticker = document.createElement('h3');
-  h3.textContent = 'Choose your Sticker';
+  h3Sticker.textContent = 'Choose your Sticker';
 
   const divStickers = document.createElement('div');
   divStickers.classList.add('div_stickers', 'flex_container');
 
   for (const sticker of stickers) {
     const divSticker = document.createElement('div');
-    divSticker.className = 'div_sticker';
-    const imgSticker = document.createElement('img');
+    divSticker.classList.add('div_sticker', 'flex_container');
 
-    divSticker.appendChild(imgSticker);
+    const inputCheck = document.createElement('input');
+    inputCheck.type = 'checkbox';
+    inputCheck.className = 'input_check';
+
+    const labelCheck = document.createElement('label');
+    labelCheck.className = 'label_check';
+    labelCheck.id = sticker.id;
+
+    divSticker.appendChild(inputCheck);
+    divSticker.appendChild(labelCheck);
+
     divStickers.appendChild(divSticker);
   }
 
-  createButton({ ownClass: 'signUp', text: 'Sign Up', parentNode: form });
+  form.appendChild(h3Sticker);
+  form.appendChild(divStickers);
+
+  createButton({ ownClass: 'signUp', text: 'Sign up', parentNode: form });
 
   const divFootSign = document.createElement('div');
   divFootSign.classList.add('div_foot_sign', 'flex_container');
@@ -57,10 +69,9 @@ export const createForm = (sectionInfo) => {
   const pFootSign = document.createElement('p');
   pFootSign.textContent = 'Already have an account?';
   const pLogin = document.createElement('p');
+  pLogin.className = 'p_login';
   pLogin.textContent = 'Login';
 
-  form.appendChild(h3Sticker);
-  form.appendChild(divStickers);
   divFootSign.appendChild(pFootSign);
   divFootSign.appendChild(pLogin);
   form.appendChild(divFootSign);

@@ -1,12 +1,17 @@
 div.div_form {
   flex-direction: var(--isc-fdc);
-  height: 80px;
-  gap: var(--isc-gap-m);
+  height: 70px;
+  gap: var(--isc-gap-xs);
 }
 
 .div_form > input {
   font-size: var(--isc-fs-m);
   padding: var(--isc-padding-s);
   border-radius: var(--isc-br-s);
-  border: 4px solid var(--isc-lp-color3);
+  border: var(--isc-b-input-sign);
+  outline: none;
+}
+
+.div_form > input:focus {
+  border: var(--isc-b-input-signF);
 }

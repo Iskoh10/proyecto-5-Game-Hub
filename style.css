@@ -10,15 +10,51 @@
 
 :root {
   /* COLORS */
-  --isc-lp-color1: #654b38;
-  --isc-lp-color2: #6b5b51;
-  --isc-lp-color3: #9e9a9a;
-  --isc-lp-color4: #eeecda;
-  --isc-lp-color5: #fafbfa;
+  /* Landing pages*/
+  --isc-lp-color1: #4d4d4d;
+  --isc-lp-color2: #d7ff60;
+  --isc-lp-color3: #9fc52e;
+  --isc-lp-color4: #e74d3c;
+  --isc-lp-color5: #cf2d1b;
+  --isc-lp-color6: #0f52ba;
+  --isc-lp-color7: #73c2fb;
+  --isc-lp-color8: #ffffff21;
+  --isc-lp-color9: #ffffff1a;
+  --isc-lp-color10: #08071099;
+
+  --isc-bg-lp: var(--isc-lp-color1);
+  --isc-bg-circle1: var(--isc-lp-color2), var(--isc-lp-color3);
+  --isc-bg-circle2: var(--isc-lp-color4), var(--isc-lp-color5);
+  --isc-bg-circle3: var(--isc-lp-color6), var(--isc-lp-color7);
+
+  --isc-b-input-sign: 4px solid var(--isc-lp-color7);
+  --isc-b-input-signF: 4px solid var(--isc-lp-color6);
+
+  --isc-bg-form: var(--isc-lp-color8);
+  --isc-b-form: 2px solid var(--isc-lp-color9);
+  --isc-bs-form: 0 0 40px var(--isc-lp-color10);
+  --isc-fc-form: var(--isc-hp-color5);
+  --isc-bc-sticker1: var(--isc-lp-color3);
+  --isc-bc-sticker2: var(--isc-lp-color4);
+  --isc-bc-sticker3: var(--isc-lp-color7);
+  --isc-bc-sticker4: var(--isc-hp-color5);
+
+  --isc-b-button-sign: 2px solid var(--isc-lp-color6);
+  --isc-bg-button-sign: var(--isc-lp-color7);
+  --isc-fc-pLogin: var(--isc-hp-color4);
+
+  --isc-fc-pSign: ;
+
+  --isc-hp-color1: #654b38;
+  --isc-hp-color2: #6b5b51;
+  --isc-hp-color3: #9e9a9a;
+  --isc-hp-color4: #eeecda;
+  --isc-hp-color5: #fafbfa;
 
   /* FONTS */
 
   --isc-fs-m: 24px;
+  --isc-fs-l: 36px;
 
   /* SPACINGS */
   --isc-margin-xs: 5px;
@@ -40,31 +76,40 @@
   --isc-gap-xl: 50px;
 
   /* display */
+  --isc-d-flex: flex;
   /* position */
+  --isc-p-abs: absolute;
+  --isc-p-rel: relative;
 
   /* flex properties */
-  --isc-df: flex;
+  --isc-jc-center: center;
+  --isc-jc-sb: space-between;
+  --isc-jc-se: space-evenly;
 
-  --isc-fdc: column;
+  --isc-ai-center: center;
+
+  --isc-dc: column;
 
   /* border */
   /* border radius */
   --isc-br-s: 20px;
 
+  --isc-br-xl: 50%;
+
   /* box shadow */
 }
 
 body {
-  display: var(--isc-df);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: var(--isc-d-flex);
+  flex-direction: var(--isc-dc);
+  justify-content: var(--isc-jc-center);
+  align-items: var(--isc-ai-center);
   width: 100%;
   height: 100vh;
 }
 
 .flex_container {
-  display: var(--isc-df);
-  justify-content: center;
-  align-items: center;
+  display: var(--isc-d-flex);
+  justify-content: var(--isc-jc-center);
+  align-items: var(--isc-ai-center);
 }
