@@ -10,7 +10,16 @@
 
 :root {
   /* COLORS */
+  --isc-lp-color1: #654b38;
+  --isc-lp-color2: #6b5b51;
+  --isc-lp-color3: #9e9a9a;
+  --isc-lp-color4: #eeecda;
+  --isc-lp-color5: #fafbfa;
+
   /* FONTS */
+
+  --isc-fs-m: 24px;
+
   /* SPACINGS */
   --isc-margin-xs: 5px;
   --isc-margin-s: 10px;
@@ -32,17 +41,30 @@
 
   /* display */
   /* position */
+
   /* flex properties */
+  --isc-df: flex;
+
+  --isc-fdc: column;
+
   /* border */
   /* border radius */
+  --isc-br-s: 20px;
+
   /* box shadow */
 }
 
 body {
-  display: flex;
+  display: var(--isc-df);
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
+}
+
+.flex_container {
+  display: var(--isc-df);
+  justify-content: center;
+  align-items: center;
 }
