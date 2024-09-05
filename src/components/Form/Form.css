@@ -1,3 +1,10 @@
+.span_err_match_pwd {
+  display: none;
+  color: var(--isc-fc-span-error);
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
 .div_sticker {
   width: 70px;
   height: 70px;
@@ -34,36 +41,70 @@ form > h2 {
   font-size: var(--isc-fs-l);
   text-align: center;
   margin-bottom: var(--isc-margin-s);
+  user-select: none;
 }
 
-form > h3 {
-  margin-top: var(--isc-margin-m);
+form h3 {
+  user-select: none;
+}
+
+.div_h3_sticker {
+  height: 60px;
   margin-bottom: var(--isc-margin-s);
+}
+
+.div_h3_sticker > h3 {
+  margin-top: var(--isc-margin-s);
+  margin-bottom: var(--isc-margin-s);
+  padding: var(--isc-padding-m);
+  transition: all 3s;
 }
 
 div.div_stickers {
   justify-content: var(--isc-jc-sb);
 }
 
-.signUp {
+.signUp,
+.login {
   margin: var(--isc-margin-m);
   padding: var(--isc-padding-s) var(--isc-padding-m);
   font-size: var(--isc-fs-m);
   border-radius: var(--isc-br-s);
   border: var(--isc-b-button-sign);
   background-color: var(--isc-bg-button-sign);
+  cursor: pointer;
 }
 
-.signUp:hover {
+.signUp:hover,
+.login:hover {
   transform: scale(1.1);
 }
 
-div.div_foot_sign {
+div.div_foot_sign,
+.div_foot_login {
   gap: var(--isc-gap-m);
+  height: 40px;
 }
 
-.p_login {
+div.div_foot_sign p,
+.div_foot_login p {
+  user-select: none;
+}
+
+.p_login,
+.p_sign_up {
   color: var(--isc-fc-pLogin);
+  padding: var(--isc-padding-s);
+
+  width: 150px;
+  cursor: pointer;
+  border: 1px solid red;
+}
+
+.p_login:hover,
+.p_sign_up:hover {
+  font-size: var(--isc-fs-m);
+  font-weight: 600;
 }
 
 .input_check {
@@ -72,6 +113,7 @@ div.div_foot_sign {
   height: 80px;
   opacity: 0;
   z-index: 3;
+  cursor: pointer;
 }
 
 .label_check {

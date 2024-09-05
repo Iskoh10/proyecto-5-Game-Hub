@@ -1,7 +1,8 @@
 import { createForm } from '../../components/Form/Form';
 import './Landing.css';
 
-export const createLanding = () => {
+export const createLanding = (typeform) => {
+  document.body.innerHTML = '';
   const divBg = document.createElement('div');
   divBg.className = 'background';
 
@@ -15,5 +16,12 @@ export const createLanding = () => {
   divBg.appendChild(circle2);
   document.body.appendChild(divBg);
 
-  createForm('Create your Account');
+  if (typeform === 'createLogin') {
+    createForm({
+      sectionInfo: 'Login to your Account',
+      classtype: 'login_form'
+    });
+  } else if (typeform === 'createSignUp') {
+    createForm({ sectionInfo: 'Create your Account', classtype: 'sign_form' });
+  }
 };

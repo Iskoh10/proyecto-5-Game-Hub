@@ -19,6 +19,7 @@ export const createInput = ({ type, name, placeholder, parentNode }) => {
   } else if (name === 'confirmPwd') {
     spanError.textContent = 'Confirm password required';
   }
+
   divForm.appendChild(spanError);
   divForm.appendChild(input);
   parentNode.appendChild(divForm);

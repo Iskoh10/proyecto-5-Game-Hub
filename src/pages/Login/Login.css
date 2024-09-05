@@ -1,0 +1,11 @@
+.div_login {
+  width: 400px;
+  height: 600px;
+  background-color: black;
+}
+
+.div_login > p {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}

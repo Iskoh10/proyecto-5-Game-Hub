@@ -45,9 +45,8 @@ body {
   bottom: -150px;
 }
 
-form {
-  width: 380px;
-  height: 600px;
+.sign_form,
+.login_form {
   position: var(--isc-p-abs);
   background-color: var(--isc-bg-form);
   border-radius: var(--isc-br-s);
@@ -57,4 +56,14 @@ form {
   padding: var(--isc-padding-m);
   text-align: center;
   color: var(--isc-fc-form);
+}
+
+.sign_form {
+  width: 380px;
+  height: 650px;
+}
+
+.login_form {
+  width: 380px;
+  height: 420px;
 }

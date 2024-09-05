@@ -6,4 +6,4 @@ import './style.css';
 // createHeader();
 
 // createForm();
-createLanding();
+createLanding('createSignUp');
