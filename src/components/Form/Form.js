@@ -5,6 +5,8 @@ import './Form.css';
 
 export const createForm = (sectionInfo) => {
   const form = document.createElement('form');
+  form.className = 'sign_form';
+  form.noValidate = true;
 
   const h2 = document.createElement('h2');
   h2.textContent = 'Divertrix';
@@ -45,8 +47,11 @@ export const createForm = (sectionInfo) => {
     divSticker.classList.add('div_sticker', 'flex_container');
 
     const inputCheck = document.createElement('input');
-    inputCheck.type = 'checkbox';
+    inputCheck.type = 'radio';
     inputCheck.className = 'input_check';
+    inputCheck.name = 'inputSticker';
+    inputCheck.value = sticker.value;
+    inputCheck.required = true;
 
     const labelCheck = document.createElement('label');
     labelCheck.className = 'label_check';

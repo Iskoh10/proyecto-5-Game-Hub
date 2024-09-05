@@ -34,6 +34,7 @@
   --isc-b-form: 2px solid var(--isc-lp-color9);
   --isc-bs-form: 0 0 40px var(--isc-lp-color10);
   --isc-fc-form: var(--isc-hp-color5);
+  --isc-fc-span-error: var(--isc-lp-color7);
   --isc-bc-sticker1: var(--isc-lp-color3);
   --isc-bc-sticker2: var(--isc-lp-color4);
   --isc-bc-sticker3: var(--isc-lp-color7);

@@ -5,6 +5,7 @@
   border-style: solid;
   border-width: 2px;
   padding: var(--isc-padding-s);
+  z-index: 1;
 }
 
 .div_sticker:first-child {
@@ -21,10 +22,6 @@
 
 .div_sticker:last-child {
   border-color: var(--isc-bc-sticker4);
-}
-
-.div_sticker:hover {
-  transform: scale(1.1);
 }
 
 .div_sticker > img {
@@ -74,6 +71,7 @@ div.div_foot_sign {
   width: 80px;
   height: 80px;
   opacity: 0;
+  z-index: 3;
 }
 
 .label_check {
@@ -82,7 +80,7 @@ div.div_foot_sign {
   height: 50px;
   background-size: cover;
   cursor: pointer;
-  z-index: -1;
+  z-index: -2;
 }
 
 #bee {
@@ -101,6 +99,14 @@ div.div_foot_sign {
   background-image: url('public/assets/nasturtium.png');
 }
 
-.inputCheck:checked + .label {
-  transform: scale(1.3);
+.input_check:checked + .label_check:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  z-index: 3;
 }

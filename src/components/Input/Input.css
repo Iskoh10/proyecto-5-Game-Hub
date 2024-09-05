@@ -1,6 +1,6 @@
 div.div_form {
-  flex-direction: var(--isc-fdc);
-  height: 70px;
+  flex-direction: var(--isc-dc);
+  height: 90px;
   gap: var(--isc-gap-xs);
 }
 
@@ -14,4 +14,11 @@ div.div_form {
 
 .div_form > input:focus {
   border: var(--isc-b-input-signF);
+}
+
+.span_error {
+  display: none;
+  color: var(--isc-fc-span-error);
+  letter-spacing: 5px;
+  font-weight: 600;
 }

@@ -1,18 +1,22 @@
 export const stickers = [
   {
     url: 'public/assets/abeja.png',
-    id: 'bee'
+    id: 'bee',
+    value: 1
   },
   {
     url: 'public/assets/cherries.png',
-    id: 'cherry'
+    id: 'cherry',
+    value: 2
   },
   {
     url: 'public/assets/flamingo.png',
-    id: 'flamingo'
+    id: 'flamingo',
+    value: 3
   },
   {
     url: 'public/assets/nasturtium.png',
-    id: 'flower'
+    id: 'flower',
+    value: 4
   }
 ];
