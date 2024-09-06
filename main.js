@@ -1,9 +1,7 @@
-import { createForm } from './src/components/Form/Form';
-import { createHeader } from './src/components/Header/Header';
+import { createHomePage } from './src/pages/Home/Home';
 import { createLanding } from './src/pages/Landing/Landing';
 import './style.css';
 
-// createHeader();
+// createLanding('createSignUp');
 
-// createForm();
-createLanding('createSignUp');
+createHomePage();

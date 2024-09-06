@@ -52,10 +52,21 @@
   --isc-hp-color4: #eeecda;
   --isc-hp-color5: #fafbfa;
 
+  --isc-bg-btn-tictactoe: #fcd19c;
+  --isc-bg-btn-gmoworld: #fc9cb9;
+  --isc-bg-btn-møm: #e4ccff;
+  --isc-bg-btn-info: #9747ff;
+
+  --isc-bs-btn-games: 0 1px 5px;
+  --isc-bs-btn-ttt: var(--isc-bs-btn-games) var(--isc-bg-btn-tictactoe);
+  --isc-bs-btn-gw: var(--isc-bs-btn-games) var(--isc-bg-btn-gmoworld);
+  --isc-bs-btn-møm: var(--isc-bs-btn-games) var(--isc-bg-btn-møm);
   /* FONTS */
 
+  --isc-fs-s: 16px;
   --isc-fs-m: 24px;
   --isc-fs-l: 36px;
+  --isc-fs-xl: 44px;
 
   /* SPACINGS */
   --isc-margin-xs: 5px;
@@ -78,6 +89,7 @@
 
   /* display */
   --isc-d-flex: flex;
+
   /* position */
   --isc-p-abs: absolute;
   --isc-p-rel: relative;
@@ -113,4 +125,11 @@ body {
   display: var(--isc-d-flex);
   justify-content: var(--isc-jc-center);
   align-items: var(--isc-ai-center);
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  place-items: center;
 }
