@@ -46,27 +46,37 @@
 
   --isc-fc-pSign: ;
 
+  /* Home page */
   --isc-hp-color1: #654b38;
   --isc-hp-color2: #6b5b51;
   --isc-hp-color3: #9e9a9a;
   --isc-hp-color4: #eeecda;
   --isc-hp-color5: #fafbfa;
+  --isc-hp-color6: #fcd19c;
+  --isc-hp-color7: #fc9cb9;
+  --isc-hp-color8: #e4ccff;
+  --isc-hp-color9: #9747ff;
 
-  --isc-bg-btn-tictactoe: #fcd19c;
-  --isc-bg-btn-gmoworld: #fc9cb9;
-  --isc-bg-btn-møm: #e4ccff;
-  --isc-bg-btn-info: #9747ff;
+  --isc-bg-btn-tictactoe: var(--isc-hp-color6);
+  --isc-bg-btn-gmoworld: var(--isc-hp-color7);
+  --isc-bg-btn-møm: var(--isc-hp-color8);
+  --isc-bg-btn-info: var(--isc-hp-color9);
 
   --isc-bs-btn-games: 0 1px 5px;
   --isc-bs-btn-ttt: var(--isc-bs-btn-games) var(--isc-bg-btn-tictactoe);
   --isc-bs-btn-gw: var(--isc-bs-btn-games) var(--isc-bg-btn-gmoworld);
   --isc-bs-btn-møm: var(--isc-bs-btn-games) var(--isc-bg-btn-møm);
+
+  --isc-bg-modal-info: var(--isc-hp-color2);
+
   /* FONTS */
 
   --isc-fs-s: 16px;
   --isc-fs-m: 24px;
   --isc-fs-l: 36px;
   --isc-fs-xl: 44px;
+
+  --isc-fw-1: 600;
 
   /* SPACINGS */
   --isc-margin-xs: 5px;
@@ -93,11 +103,13 @@
   /* position */
   --isc-p-abs: absolute;
   --isc-p-rel: relative;
+  --isc-p-fix: fixed;
 
   /* flex properties */
   --isc-jc-center: center;
   --isc-jc-sb: space-between;
   --isc-jc-se: space-evenly;
+  --isc-jc-fs: flex-start;
 
   --isc-ai-center: center;
 

@@ -1,0 +1,67 @@
+div.div_modal {
+  width: 500px;
+  height: 500px;
+  background-color: var(--isc-bg-modal-info);
+  position: var(--isc-p-abs);
+  flex-direction: var(--isc-dc);
+  justify-content: var(--isc-jc-fs);
+  transition: all 0.4;
+}
+
+div.div_btns {
+  width: 100%;
+  justify-content: var(--isc-jc-sb);
+  padding: var(--isc-padding-s);
+}
+
+.btn_changer {
+  gap: var(--isc-gap-m);
+}
+
+.btn_changer div {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--isc-br-xl);
+  border: 1px solid violet;
+}
+
+.btn_exit {
+  font-size: var(--isc-fs-m);
+  color: var(--isc-hp-color4);
+  cursor: pointer;
+}
+
+div.div_game {
+  flex-direction: var(--isc-dc);
+  width: 100%;
+  border: 1px solid red;
+}
+
+.div_game > h3 {
+  animation: changeColor2 1s infinite;
+}
+
+@keyframes changeColor2 {
+  0% {
+    color: var(--isc-hp-color6);
+  }
+  40% {
+    color: var(--isc-hp-color7);
+  }
+  80% {
+    color: var(--isc-hp-color8);
+  }
+  100% {
+    color: var(--isc-hp-color9);
+  }
+}
+
+.div_game > p {
+  width: 350px;
+  background-color: var(--isc-hp-color3);
+  border-radius: var(--isc-br-s);
+  padding: var(--isc-padding-l);
+  font-family: inter;
+  font-size: var(--isc-fs-m);
+  text-align: center;
+}

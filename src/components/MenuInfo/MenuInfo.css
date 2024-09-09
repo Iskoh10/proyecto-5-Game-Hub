@@ -1,0 +1,111 @@
+.container_menu {
+  width: 200px;
+  height: 200px;
+  position: var(--isc-p-fix);
+  bottom: 0;
+  right: 0;
+}
+
+.base_menu {
+  width: 270px;
+  height: 270px;
+  border-radius: var(--isc-br-xl);
+  position: var(--isc-p-abs);
+  bottom: -100px;
+  right: -100px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.menu_btn {
+  width: 150px;
+  height: 150px;
+  background-color: var(--isc-bg-btn-info);
+  border-radius: var(--isc-br-xl);
+  bottom: -50px;
+  right: -50px;
+  position: var(--isc-p-abs);
+  transform: scale(1.2);
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.menu_btn > p {
+  position: var(--isc-p-abs);
+  top: 45px;
+  left: 12px;
+  font-size: var(--isc-fs-m);
+  font-weight: var(--isc-fw-1);
+}
+
+.ttt_btn,
+.gw_btn,
+.møm_btn {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--isc-br-xl);
+  position: var(--isc-p-abs);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 100ms ease-in-out;
+}
+
+.ttt_btn {
+  background-color: var(--isc-bg-btn-tictactoe);
+  bottom: 80px;
+  transition-delay: 300ms;
+}
+
+.gw_btn {
+  background-color: var(--isc-bg-btn-gmoworld);
+  top: 25px;
+  left: 25px;
+  transition-delay: 600ms;
+}
+
+.møm_btn {
+  background-color: var(--isc-bg-btn-møm);
+  right: 80px;
+  transition-delay: 900ms;
+}
+
+.ttt_btn:hover,
+.gw_btn:hover,
+.møm_btn:hover {
+  transform: scale(1.1);
+}
+
+.ttt_btn:active,
+.gw_btn:active,
+.møm_btn:active {
+  opacity: 0.9;
+}
+
+.ttt_btn:hover,
+.gw_btn:hover,
+.møm_btn:hover {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.active .menu_btn {
+  transform: scale(0.8);
+  color: var(--isc-hp-color4);
+  p {
+    left: 20px;
+    transition: all 200ms;
+  }
+}
+
+.active .base_menu {
+  opacity: 100%;
+  bottom: -70px;
+  right: -70px;
+}
+
+.active .ttt_btn,
+.active .gw_btn,
+.active .møm_btn {
+  opacity: 100%;
+}
