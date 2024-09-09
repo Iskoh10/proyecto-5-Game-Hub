@@ -40,48 +40,56 @@ export const createHomePage = () => {
 
   sectionMøm.appendChild(imgMøm);
 
-  const menuBg = document.createElement('div');
-  menuBg.classList.add('menu_bg', 'flex_container');
-  const menuContainer = document.createElement('div');
-  menuContainer.className = 'menu_container';
+  //! Empieza el menu pasarlo a un componente
+  const menu = document.createElement('div');
+  menu.className = 'container_menu';
 
-  menuBg.appendChild(menuContainer);
+  const baseMenu = document.createElement('div');
+  baseMenu.className = 'base_menu';
 
-  const menuInfo = document.createElement('div');
-  menuInfo.classList.add('menu_info', 'flex_container');
-  const pInfo = document.createElement('p');
-  pInfo.textContent = 'Info';
-
-  menuInfo.addEventListener('click', () => {
-    optionTtt.classList.toggle('show'); //! por aqui
+  baseMenu.addEventListener('click', () => {
+    document.body.classList.remove('active');
   });
 
-  menuInfo.appendChild(pInfo);
-  menuContainer.appendChild(menuInfo);
-
-  const optionTtt = document.createElement('div');
-  optionTtt.classList.add('option_ttt', 'flex_container');
-  const pTtt = document.createElement('p');
-  pTtt.textContent = 'Ttt';
-
-  optionTtt.appendChild(pTtt);
-  menuInfo.appendChild(optionTtt);
-
-  const optionGw = document.createElement('div');
-  optionGw.classList.add('option_gw', 'flex_container');
-  const pGw = document.createElement('p');
-  pGw.textContent = 'GW';
-
-  optionGw.appendChild(pGw);
-  menuInfo.appendChild(optionGw);
-
-  const optionMøm = document.createElement('div');
-  optionMøm.classList.add('option_møm', 'flex_container');
+  const mømBtn = document.createElement('div');
+  mømBtn.classList.add('møm_btn', 'flex_container');
   const pMøm = document.createElement('p');
   pMøm.textContent = 'Møm';
 
-  optionMøm.appendChild(pMøm);
-  menuInfo.appendChild(optionMøm);
+  mømBtn.appendChild(pMøm);
+
+  const gmoworldBtn = document.createElement('div');
+  gmoworldBtn.classList.add('gw_btn', 'flex_container');
+  const pGW = document.createElement('p');
+  pGW.textContent = 'GW';
+
+  gmoworldBtn.appendChild(pGW);
+
+  const tictactoeBtn = document.createElement('div');
+  tictactoeBtn.classList.add('ttt_btn', 'flex_container');
+  const pTtt = document.createElement('p');
+  pTtt.textContent = 'Ttt';
+
+  tictactoeBtn.appendChild(pTtt);
+
+  baseMenu.appendChild(mømBtn);
+  baseMenu.appendChild(gmoworldBtn);
+  baseMenu.appendChild(tictactoeBtn);
+
+  const menuBtn = document.createElement('div');
+  menuBtn.className = 'menu_btn';
+  const pInfo = document.createElement('p');
+  pInfo.textContent = 'Info';
+
+  menuBtn.appendChild(pInfo);
+
+  menu.appendChild(baseMenu);
+  menu.appendChild(menuBtn);
+
+  menuBtn.addEventListener('click', () => {
+    console.log('hole');
+    document.body.classList.toggle('active'); //! por aqui
+  });
 
   document.body.appendChild(divBgHome);
 
@@ -95,7 +103,7 @@ export const createHomePage = () => {
   sectionGames.appendChild(sectionMøm);
   sectionContainerHome.appendChild(sectionGames);
 
-  sectionContainerHome.appendChild(menuBg);
+  sectionContainerHome.appendChild(menu);
 
   document.body.appendChild(sectionContainerHome);
 };

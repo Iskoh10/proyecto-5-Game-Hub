@@ -100,67 +100,132 @@ section.section_Ttt {
   box-shadow: var(--isc-bs-btn-møm);
 }
 
-div.menu_bg {
-  width: 100%;
-  height: 100%;
-  position: var(--isc-p-rel);
-  justify-content: flex-end;
-  border: 1px solid blue;
-}
+/* Menu component */
 
-.menu_container {
-  position: var(--isc-p-rel);
-  width: 150px;
-  height: 150px;
+.container_menu {
+  width: 200px;
+  height: 200px;
+  position: fixed;
   bottom: 0;
-  left: 1px;
-  border-radius: var(--isc-br-xl);
+  right: 0;
   border: 1px solid red;
 }
 
-.menu_info {
+.base_menu {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -100px;
+  right: -100px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  border: 1px solid red;
+}
+
+.menu_btn {
   width: 100px;
   height: 100px;
-  font-size: var(--isc-fs-m);
-  border-radius: var(--isc-br-xl);
-  background-color: var(--isc-bg-btn-info);
-  position: relative;
-  z-index: 2;
-}
-
-.option_ttt,
-.option_gw,
-.option_møm {
+  background-color: #ee82ee;
+  border-radius: 50%;
+  bottom: -20px;
+  right: -20px;
   position: absolute;
-  font-size: var(--isc-fs-s);
-  border-radius: var(--isc-br-xl);
-  width: 50px;
-  height: 50px;
+  transform: scale(1.2);
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+  cursor: pointer;
 }
 
-div.option_ttt {
-  background-color: var(--isc-bg-btn-tictactoe);
+.menu_btn > p {
+  position: absolute;
+  top: 35px;
+  left: 15px;
+  font-weight: 600;
+}
+
+.ttt_btn,
+.gw_btn,
+.møm_btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
   opacity: 0;
-  left: -20px;
-  z-index: -1; /*! */
-  transition: all 1s;
+  cursor: pointer;
+  transition-delay: 0s;
 }
 
-.option_gw {
-  background-color: var(--isc-bg-btn-gmoworld);
-  top: -50px;
-  left: -50px;
-}
-.option_møm {
-  background-color: var(--isc-bg-btn-møm);
-  top: -70px;
+.ttt_btn {
+  background-color: green;
+  position: absolute;
+  bottom: 80px;
+  transition-delay: 300ms;
 }
 
-div.show {
+.gw_btn {
+  background-color: red;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  transition-delay: 600ms;
+}
+
+.møm_btn {
+  background-color: blue;
+  right: 80px;
+  transition-delay: 900ms;
+}
+
+.ttt_btn:hover,
+.gw_btn:hover,
+.møm_btn:hover {
+  transform: scale(1.1);
+}
+
+.ttt_btn:active,
+.gw_btn:active,
+.møm_btn:active {
+  opacity: 0.9;
+}
+
+.ttt_btn:hover {
+  color: white;
+  font-weight: 600;
+}
+
+.gw_btn:hover {
+  color: white;
+  font-weight: 600;
+}
+
+.møm_btn:hover {
+  color: white;
+  font-weight: 600;
+}
+
+.active .menu_btn {
+  transform: scale(0.8);
+  color: white;
+}
+
+.active .base_menu {
   opacity: 100%;
-  /*! */
-  left: -70px;
+  bottom: -50px;
+  right: -50px;
+}
+
+.active .ttt_btn,
+.active .gw_btn,
+.active .møm_btn {
+  opacity: 100%;
+}
+
+.active .ttt_btn {
+}
+
+.active .gw_btn {
+}
+
+.active .møm_btn {
 }
