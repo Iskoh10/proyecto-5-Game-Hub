@@ -1,7 +1,9 @@
 import { createMenuInfo } from '../../components/MenuInfo/MenuInfo';
+import { createTicTacToe } from '../Tictactoe/Tictactoe';
 import './Home.css';
 
 export const createHomePage = () => {
+  document.body.innerHTML = '';
   const divBgHome = document.createElement('div');
   divBgHome.classList.add('div_bg_home', 'flex_container');
 
@@ -22,6 +24,9 @@ export const createHomePage = () => {
 
   const sectionTicTacToe = document.createElement('section');
   sectionTicTacToe.classList.add('section_Ttt', 'flex_container');
+  sectionTicTacToe.addEventListener('click', () => {
+    createTicTacToe();
+  });
   const imgTtt = document.createElement('img');
   imgTtt.src = 'public/assets/tictactoegame.svg';
 

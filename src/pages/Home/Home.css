@@ -31,14 +31,11 @@ body {
   position: var(--isc-p-abs);
   width: 700px;
   height: 800px;
-  border: 1px solid red;
+  border: 3px solid var(--isc-hp-color1);
 }
 
 h2 {
   font-size: var(--isc-fs-xl);
-}
-
-.div_h3_trilogy {
 }
 
 h3 {
@@ -68,6 +65,7 @@ section.section_Møm {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .section_Ttt > img,

@@ -69,6 +69,13 @@
 
   --isc-bg-modal-info: var(--isc-hp-color2);
 
+  /* Home Tic tac toe */
+  --isc-ht-color1: #fcf5c7;
+  --isc-ht-color2: #ffee93;
+  --isc-ht-color3: #ffc09f;
+  --isc-ht-color4: #adf7b6;
+  --isc-ht-color5: #a0cdd9;
+
   /* FONTS */
 
   --isc-fs-s: 16px;

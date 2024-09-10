@@ -1,5 +1,121 @@
-.bubblegum-sans-regular {
+body {
   font-family: 'Bubblegum Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: var(--isc-hp-color1);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.div_bg_ttt {
+  width: 100%;
+  height: 100%;
+  background: repeating-radial-gradient(
+      circle at 0 0,
+      transparent,
+      transparent 4em,
+      transparent 4em,
+      #adf7b6 1em
+    ),
+    repeating-radial-gradient(
+      circle at 50%,
+      transparent,
+      #a0ced9 4em,
+      transparent 4em,
+      transparent 5em
+    ),
+    repeating-radial-gradient(
+      circle at 50%,
+      transparent,
+      #a0ced9 4em,
+      transparent 4em,
+      transparent 5em
+    ),
+    repeating-radial-gradient(
+      circle at 100%,
+      transparent,
+      #ffc09f 4em,
+      transparent 4em,
+      transparent 5em
+    ),
+    #fff8e7;
+
+  background-blend-mode: multiply;
+  background-size: 12em 12em;
+  background-position: 0 10em, 2.5em 2.5em, 10em 5em, 5em 10em;
+  opacity: 80%;
+
+  position: var(--isc-p-rel);
+}
+
+section.section_ttt {
+  width: 500px;
+  height: 500px;
+  border: 2px solid yellow;
+  flex-direction: var(--isc-dc);
+  justify-content: var(--isc-jc-fs);
+  background-color: white;
+}
+
+div.div_btns_ttt {
+  width: 100%;
+  justify-content: var(--isc-jc-sb);
+  padding: var(--isc-padding-s);
+}
+
+.btn_home {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--isc-br-xl);
+  background-color: red;
+  cursor: pointer;
+}
+
+.btn_home > p {
+  color: var(--isc-ht-color1);
+  font-size: var(--isc-fs-l);
+}
+
+.logo_ttt {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--isc-br-xl);
+  background-color: var(--isc-hp-color6);
+}
+
+.logo_ttt > img {
+  transform: scale(0.8);
+}
+
+.btn_profile {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--isc-br-xl);
+  background-color: var(--isc-ht-color5);
+  cursor: pointer;
+}
+
+.section_game_ttt {
+  width: 200px;
+  height: 200px;
+  border: 1px solid green;
+}
+
+.btn_start_ttt {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 180px;
+  height: 100px;
+  box-shadow: 0 2px 5px 0 black;
+  background: url('https://cdn.pixabay.com/photo/2020/05/04/10/21/background-5128585_1280.jpg');
+}
+
+.btn_start_ttt:hover {
+  filter: hue-rotate(2.5rad);
+  box-shadow: 0 0 0 0 black;
 }

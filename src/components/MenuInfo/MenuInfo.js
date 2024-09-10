@@ -1,4 +1,4 @@
-import { createModalInfo } from '../ModalInfo/ModalInfo';
+import { checkModal } from '../CheckingModal/CheckingModal';
 import './MenuInfo.css';
 
 export const createMenuInfo = (parentNode) => {
@@ -10,7 +10,7 @@ export const createMenuInfo = (parentNode) => {
 
   baseMenu.addEventListener('click', (e) => {
     document.body.classList.remove('active');
-    createModalInfo(e.target.innerText);
+    checkModal(parentNode, e.target.innerText);
   });
 
   const mømBtn = document.createElement('div');
