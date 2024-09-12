@@ -76,12 +76,17 @@
   --isc-ht-color4: #adf7b6;
   --isc-ht-color5: #a0cdd9;
 
+  --isc-bs-start-btn-ttt: 0 2px 5px 0 var(--isc-lp-color10);
+  --isc-bs-start-btn-ttt-hover: 0 0 0 0 var(--isc-lp-color10);
+
+  --isc-b-grid-ttt: 5px solid var(--isc-lp-color10);
   /* FONTS */
 
   --isc-fs-s: 16px;
   --isc-fs-m: 24px;
   --isc-fs-l: 36px;
   --isc-fs-xl: 44px;
+  --isc-special-fs: 56px;
 
   --isc-fw-1: 600;
 
@@ -106,6 +111,7 @@
 
   /* display */
   --isc-d-flex: flex;
+  --isc-d-grid: grid;
 
   /* position */
   --isc-p-abs: absolute;

@@ -1,3 +1,4 @@
+import { functionalityTtt } from '../../components/FunctionTtt/FunctionTtt';
 import { createHomePage } from '../Home/Home';
 import './Tictactoe.css';
 
@@ -47,10 +48,25 @@ export const createTicTacToe = () => {
   h2Ttt.textContent = 'Hola, Usuario'; //! TRaer datos del localStorage
 
   const sectionGameTtt = document.createElement('section');
-  sectionGameTtt.classList.add('section_game_ttt');
+  sectionGameTtt.classList.add('section_game_ttt', 'flex_container');
+
+  const divGridTtt = document.createElement('div');
+  divGridTtt.classList.add('div_grid_ttt', 'flex_container');
+
+  divGridTtt.innerHTML = `<div class="square one"></div>
+                          <div class="square two"></div>
+  <div class="square three"></div>
+  <div class="square four"></div>
+  <div class="square five"></div>
+  <div class="square six"></div>
+  <div class="square seven"></div>
+  <div class="square eight"></div>
+  <div class="square nine"></div>`;
+
+  sectionGameTtt.appendChild(divGridTtt);
 
   const startTtt = document.createElement('div');
-  startTtt.className = 'btn_start_ttt';
+  startTtt.classList.add('btn_start_ttt', 'flex_container');
   startTtt.textContent = 'Start';
 
   sectionTtt.appendChild(divBtnsTtt);
@@ -60,4 +76,6 @@ export const createTicTacToe = () => {
 
   divBgTtt.appendChild(sectionTtt);
   document.body.appendChild(divBgTtt);
+
+  functionalityTtt();
 };
