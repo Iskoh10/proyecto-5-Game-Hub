@@ -148,6 +148,13 @@ div.div_btns_ttt {
   border-left: var(--isc-b-grid-ttt);
 }
 
+.square {
+  font-family: 'Bubblegum Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
+}
+
 .one,
 .two,
 .three,
@@ -168,7 +175,6 @@ div.div_btns_ttt {
   font-weight: 400;
   font-style: normal;
   margin: var(--isc-margin-m);
-
   width: 180px;
   height: 50px;
   box-shadow: var(--isc-bs-start-btn-ttt);
