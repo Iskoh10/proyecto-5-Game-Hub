@@ -1,4 +1,4 @@
-import { functionalityTtt } from '../../components/FunctionTtt/FunctionTtt';
+import { startButton } from '../../components/FunctionTtt/FunctionTtt';
 import { createHomePage } from '../Home/Home';
 import './Tictactoe.css';
 
@@ -24,13 +24,9 @@ export const createTicTacToe = () => {
 
   btnHome.appendChild(pBtnHome);
 
-  const logoTtt = document.createElement('div');
-  logoTtt.classList.add('logo_ttt', 'flex_container');
-  const imgTtt = document.createElement('img');
-  imgTtt.src = 'public/assets/tictactoegame.svg';
-  imgTtt.alt = 'Tic tac toe';
-
-  logoTtt.appendChild(imgTtt);
+  const h2Ttt = document.createElement('h2');
+  h2Ttt.className = 'h2_ttt';
+  h2Ttt.textContent = 'Hola, Usuario'; //! TRaer datos del localStorage
 
   const btnProfile = document.createElement('div');
   btnProfile.classList.add('btn_profile', 'flex_container');
@@ -40,15 +36,14 @@ export const createTicTacToe = () => {
   btnProfile.appendChild(imgProfile);
 
   divBtnsTtt.appendChild(btnHome);
-  divBtnsTtt.appendChild(logoTtt);
+  divBtnsTtt.appendChild(h2Ttt);
   divBtnsTtt.appendChild(btnProfile);
-
-  const h2Ttt = document.createElement('h2');
-  h2Ttt.className = 'h2_ttt';
-  h2Ttt.textContent = 'Hola, Usuario'; //! TRaer datos del localStorage
 
   const sectionGameTtt = document.createElement('section');
   sectionGameTtt.classList.add('section_game_ttt', 'flex_container');
+
+  const turn = document.createElement('h3');
+  turn.className = 'turn';
 
   const divGridTtt = document.createElement('div');
   divGridTtt.classList.add('div_grid_ttt', 'flex_container');
@@ -70,12 +65,30 @@ export const createTicTacToe = () => {
   startTtt.textContent = 'Start';
 
   sectionTtt.appendChild(divBtnsTtt);
-  sectionTtt.appendChild(h2Ttt);
+  sectionTtt.appendChild(turn);
+
   sectionTtt.appendChild(sectionGameTtt);
   sectionTtt.appendChild(startTtt);
 
   divBgTtt.appendChild(sectionTtt);
   document.body.appendChild(divBgTtt);
 
-  functionalityTtt();
+  startButton();
+};
+
+export const playerTurn = (player) => {
+  const turn = document.querySelector('.turn');
+  turn.textContent = `It's ${player}'s turn`;
+};
+
+export const gameResult = (result) => {
+  const turn = document.querySelector('.turn');
+  if (result === 'You Win!') {
+    turn.style.color = 'green';
+  } else if (result === 'You Loose!') {
+    turn.style.color = 'red';
+  } else {
+    turn.style.color = 'orange';
+  }
+  turn.textContent = result;
 };
