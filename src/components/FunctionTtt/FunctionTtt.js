@@ -1,31 +1,14 @@
 import { gameResult, playerTurn } from '../../pages/Tictactoe/Tictactoe';
+import { startButton } from '../FunctionStartBtnTtt/FunctionStartBtnTtt';
 import './FunctionTtt.css';
 
-export const startButton = () => {
-  const startBtn = document.querySelector('.btn_start_ttt');
-
-  startBtn.addEventListener('click', () => {
-    let numClick = [];
-    const divboxes = document.querySelectorAll('.square');
-    numClick = [1, 1, 1, 1, 1, 1, 1, 1, 1];
-    for (const divBox of divboxes) {
-      divBox.innerHTML = '';
-      divBox.style.backgroundColor = '';
-    }
-    startBtn.textContent = 'Playing...';
-    functionalityTtt(numClick, divboxes);
-  });
-};
-
 export const functionalityTtt = (numClick, divboxes) => {
+  const toDraw = (e) => {
+    selector(e);
+  };
+
   for (const divBox of divboxes) {
-    divBox.addEventListener(
-      'click',
-      (e) => {
-        selector(e);
-      },
-      { once: true }
-    );
+    divBox.addEventListener('click', toDraw);
   }
 
   const selector = (e) => {
@@ -64,22 +47,31 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox3.style.backgroundColor = 'var(--isc-hp-color7)';
       console.log('Partida ganada por: ' + divbox1.textContent);
       if (divbox1.textContent === 'X') {
+        if (!localStorage.getItem('won')) {
+          console.log('Creamos tu perfil');
+          const wonGames = localStorage.setItem('won', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Win!');
         startBtn.textContent = 'Start';
-
-        //! desactivar event de los square cuando se gane pierda o empate
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       } else if (divbox1.textContent === 'O') {
+        const lostGames = localStorage.setItem('lost', 1);
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       }
-
-      // for (const divBox of divboxes) {
-      //   divBox.removeEventListener('click', (e) => {
-      //     selector(e);
-      //   });
-      // }
-
-      //! Eliminar el addEventlistener cuando gane alguno
     } else if (
       divbox1.textContent === divbox4.textContent &&
       divbox4.textContent === divbox7.textContent &&
@@ -92,9 +84,17 @@ export const functionalityTtt = (numClick, divboxes) => {
       if (divbox1.textContent === 'X') {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       } else if (divbox1.textContent === 'O') {
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       }
     } else if (
       divbox1.textContent === divbox5.textContent &&
@@ -108,9 +108,17 @@ export const functionalityTtt = (numClick, divboxes) => {
       if (divbox1.textContent === 'X') {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       } else if (divbox1.textContent === 'O') {
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       }
     } else if (
       divbox2.textContent === divbox5.textContent &&
@@ -124,9 +132,17 @@ export const functionalityTtt = (numClick, divboxes) => {
       if (divbox2.textContent === 'X') {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       } else if (divbox2.textContent === 'O') {
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       }
     } else if (
       divbox3.textContent === divbox6.textContent &&
@@ -140,9 +156,17 @@ export const functionalityTtt = (numClick, divboxes) => {
       if (divbox3.textContent === 'X') {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       } else if (divbox3.textContent === 'O') {
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       }
     } else if (
       divbox3.textContent === divbox5.textContent &&
@@ -156,9 +180,17 @@ export const functionalityTtt = (numClick, divboxes) => {
       if (divbox3.textContent === 'X') {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       } else if (divbox3.textContent === 'O') {
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       }
     } else if (
       divbox4.textContent === divbox5.textContent &&
@@ -172,9 +204,17 @@ export const functionalityTtt = (numClick, divboxes) => {
       if (divbox4.textContent === 'X') {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       } else if (divbox4.textContent === 'O') {
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       }
     } else if (
       divbox7.textContent === divbox8.textContent &&
@@ -188,14 +228,26 @@ export const functionalityTtt = (numClick, divboxes) => {
       if (divbox7.textContent === 'X') {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       } else if (divbox7.textContent === 'O') {
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
+        startButton();
+        for (const divBox of divboxes) {
+          divBox.removeEventListener('click', toDraw);
+        }
       }
     } else if (numClick.length === 0) {
+      const drawGames = localStorage.setItem('draw', 1);
       gameResult('A draw!');
-
       startBtn.textContent = 'Start';
+      startButton();
+      for (const divBox of divboxes) {
+        divBox.removeEventListener('click', toDraw);
+      }
     }
   };
 };

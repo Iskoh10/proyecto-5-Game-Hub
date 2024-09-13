@@ -93,6 +93,19 @@ div.div_btns_ttt {
   cursor: pointer;
 }
 
+.data_profile {
+  flex-direction: column;
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  top: 200px;
+  background-color: #ffffff40;
+  box-shadow: 0 8px 32px 0 #1f26875e;
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid #ffffff2e;
+}
+
 .turn {
   font-family: 'Bubblegum Sans', sans-serif;
   width: 100%;
