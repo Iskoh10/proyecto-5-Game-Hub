@@ -1,4 +1,4 @@
-import { checkModal } from '../CheckingModal/CheckingModal';
+import { checkModal } from '../CheckingModal/CheckingModal.js';
 import './MenuInfo.css';
 
 export const createMenuInfo = (parentNode) => {

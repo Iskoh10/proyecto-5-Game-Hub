@@ -93,7 +93,20 @@ div.div_btns_ttt {
   cursor: pointer;
 }
 
+.close_profile {
+  font-family: 'Bubblegum Sans', sans-serif;
+  font-size: var(--isc-fs-l);
+  position: var(--isc-p-abs);
+  top: 0;
+  right: 0;
+  padding: var(--isc-padding-s);
+  cursor: pointer;
+}
+
 .data_profile {
+  font-family: 'Bubblegum Sans', sans-serif;
+  font-size: var(--isc-fs-l);
+  gap: var(--isc-gap-l);
   flex-direction: column;
   position: absolute;
   width: 400px;

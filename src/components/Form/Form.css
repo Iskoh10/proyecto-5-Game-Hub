@@ -46,6 +46,7 @@ form > h2 {
 
 form h3 {
   user-select: none;
+  font-size: var(--isc-fs-m);
 }
 
 .div_h3_sticker {
@@ -54,9 +55,11 @@ form h3 {
 }
 
 .div_h3_sticker > h3 {
+  width: 100%;
   margin-top: var(--isc-margin-s);
   margin-bottom: var(--isc-margin-s);
   padding: var(--isc-padding-m);
+  font-size: var(--isc-fs-s);
   transition: all 3s;
 }
 
@@ -96,7 +99,7 @@ div.div_foot_sign p,
   color: var(--isc-fc-pLogin);
   padding: var(--isc-padding-s);
 
-  width: 150px;
+  width: 200px;
   cursor: pointer;
 }
 

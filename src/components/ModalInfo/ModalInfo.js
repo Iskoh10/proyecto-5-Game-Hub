@@ -1,5 +1,5 @@
 import { info } from '../../data/info';
-import { checkModal } from '../CheckingModal/CheckingModal';
+import { checkModal } from '../CheckingModal/CheckingModal.js';
 import './ModalInfo.css';
 
 export const createModalInfo = (parentNode, title, node) => {
