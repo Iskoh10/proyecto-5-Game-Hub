@@ -27,19 +27,21 @@ export const createTicTacToe = () => {
 
   const h2Ttt = document.createElement('h2');
   h2Ttt.className = 'h2_ttt';
-  const dataUser = JSON.parse(localStorage.getItem('myProfile'));
-  h2Ttt.textContent = `Hola, ${dataUser[0].name}`;
+  const dataProfile = JSON.parse(localStorage.getItem('myProfile'));
+  h2Ttt.textContent = `Hola, ${dataProfile[0].name}`;
 
   const btnProfile = document.createElement('div');
   btnProfile.classList.add('btn_profile', 'flex_container');
   const imgProfile = document.createElement('img');
-  for (const sticker of stickers) {
-    if (sticker.id === dataUser[0].sticker) {
-      imgProfile.src = sticker.url; //! Llegar del landing
-    }
-  }
+
+  const urlSticker = stickers.find(
+    (sticker) => sticker.value === parseInt(dataProfile[0].sticker)
+  );
+
+  imgProfile.src = urlSticker.url;
 
   btnProfile.addEventListener('click', () => {
+    //! Eliminar la funcionalidad del boton start mientras se muestra y devolver la funcionalidad cuando se cierre, lo mismo con el boton home, englobar los resultados en una unica variable en el localstorage "tictactoe" tipo objeto [{won: , lost: , draw:}]
     const dataProfile = document.querySelector('.data_profile');
 
     if (!dataProfile) {
@@ -54,8 +56,6 @@ export const createTicTacToe = () => {
         dataProfile.remove();
       });
 
-      dataProfile.appendChild(closeProfile);
-
       const won = document.createElement('p');
       if (!localStorage.getItem('won')) {
         won.textContent = `You won: 0`;
@@ -63,16 +63,14 @@ export const createTicTacToe = () => {
         const wonGames = localStorage.getItem('won');
         won.textContent = `You won: ${wonGames}`;
       }
-      dataProfile.appendChild(won);
 
       const lost = document.createElement('p');
       if (!localStorage.getItem('lost')) {
         lost.textContent = `You lost: 0`;
       } else {
         const lostGames = localStorage.getItem('lost');
-        won.textContent = `You lost: ${lostGames}`;
+        lost.textContent = `You lost: ${lostGames}`;
       }
-      dataProfile.appendChild(lost);
 
       const draw = document.createElement('p');
       if (!localStorage.getItem('draw')) {
@@ -81,6 +79,10 @@ export const createTicTacToe = () => {
         const drawGames = localStorage.getItem('draw');
         draw.textContent = `You draw: ${drawGames}`;
       }
+
+      dataProfile.appendChild(closeProfile);
+      dataProfile.appendChild(won);
+      dataProfile.appendChild(lost);
       dataProfile.appendChild(draw);
     }
   });

@@ -64,7 +64,14 @@ export const functionalityTtt = (numClick, divboxes) => {
           divBox.removeEventListener('click', toDraw);
         }
       } else if (divbox1.textContent === 'O') {
-        const lostGames = localStorage.setItem('lost', 1);
+        if (!localStorage.getItem('lost')) {
+          const lostGames = localStorage.setItem('lost', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
@@ -82,6 +89,16 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox7.style.backgroundColor = 'var(--isc-hp-color7)';
       console.log('Partida ganada por: ' + divbox1.textContent);
       if (divbox1.textContent === 'X') {
+        if (!localStorage.getItem('won')) {
+          console.log('Creamos tu perfil');
+          const wonGames = localStorage.setItem('won', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
@@ -89,6 +106,15 @@ export const functionalityTtt = (numClick, divboxes) => {
           divBox.removeEventListener('click', toDraw);
         }
       } else if (divbox1.textContent === 'O') {
+        if (!localStorage.getItem('lost')) {
+          const lostGames = localStorage.setItem('lost', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
@@ -106,6 +132,15 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox9.style.backgroundColor = 'var(--isc-hp-color7)';
       console.log('Partida ganada por: ' + divbox1.textContent);
       if (divbox1.textContent === 'X') {
+        if (!localStorage.getItem('won')) {
+          const wonGames = localStorage.setItem('won', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
@@ -113,6 +148,15 @@ export const functionalityTtt = (numClick, divboxes) => {
           divBox.removeEventListener('click', toDraw);
         }
       } else if (divbox1.textContent === 'O') {
+        if (!localStorage.getItem('lost')) {
+          const lostGames = localStorage.setItem('lost', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
@@ -130,6 +174,16 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox8.style.backgroundColor = 'var(--isc-hp-color7)';
       console.log('Partida ganada por: ' + divbox2.textContent);
       if (divbox2.textContent === 'X') {
+        if (!localStorage.getItem('won')) {
+          console.log('Creamos tu perfil');
+          const wonGames = localStorage.setItem('won', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
@@ -137,6 +191,15 @@ export const functionalityTtt = (numClick, divboxes) => {
           divBox.removeEventListener('click', toDraw);
         }
       } else if (divbox2.textContent === 'O') {
+        if (!localStorage.getItem('lost')) {
+          const lostGames = localStorage.setItem('lost', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
@@ -154,6 +217,16 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox9.style.backgroundColor = 'var(--isc-hp-color7)';
       console.log('Partida ganada por: ' + divbox3.textContent);
       if (divbox3.textContent === 'X') {
+        if (!localStorage.getItem('won')) {
+          console.log('Creamos tu perfil');
+          const wonGames = localStorage.setItem('won', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
@@ -161,6 +234,15 @@ export const functionalityTtt = (numClick, divboxes) => {
           divBox.removeEventListener('click', toDraw);
         }
       } else if (divbox3.textContent === 'O') {
+        if (!localStorage.getItem('lost')) {
+          const lostGames = localStorage.setItem('lost', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
@@ -178,6 +260,16 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox7.style.backgroundColor = 'var(--isc-hp-color7)';
       console.log('Partida ganada por: ' + divbox3.textContent);
       if (divbox3.textContent === 'X') {
+        if (!localStorage.getItem('won')) {
+          console.log('Creamos tu perfil');
+          const wonGames = localStorage.setItem('won', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
@@ -185,6 +277,15 @@ export const functionalityTtt = (numClick, divboxes) => {
           divBox.removeEventListener('click', toDraw);
         }
       } else if (divbox3.textContent === 'O') {
+        if (!localStorage.getItem('lost')) {
+          const lostGames = localStorage.setItem('lost', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
@@ -202,6 +303,16 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox6.style.backgroundColor = 'var(--isc-hp-color7)';
       console.log('Partida ganada por: ' + divbox4.textContent);
       if (divbox4.textContent === 'X') {
+        if (!localStorage.getItem('won')) {
+          console.log('Creamos tu perfil');
+          const wonGames = localStorage.setItem('won', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
@@ -209,6 +320,15 @@ export const functionalityTtt = (numClick, divboxes) => {
           divBox.removeEventListener('click', toDraw);
         }
       } else if (divbox4.textContent === 'O') {
+        if (!localStorage.getItem('lost')) {
+          const lostGames = localStorage.setItem('lost', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
@@ -226,6 +346,15 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox9.style.backgroundColor = 'var(--isc-hp-color7)';
       console.log('Partida ganada por: ' + divbox7.textContent);
       if (divbox7.textContent === 'X') {
+        if (!localStorage.getItem('won')) {
+          console.log('Creamos tu perfil');
+          const wonGames = localStorage.setItem('won', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
@@ -233,6 +362,15 @@ export const functionalityTtt = (numClick, divboxes) => {
           divBox.removeEventListener('click', toDraw);
         }
       } else if (divbox7.textContent === 'O') {
+        if (!localStorage.getItem('lost')) {
+          const lostGames = localStorage.setItem('lost', 1);
+        } else {
+          let wonGame = localStorage.getItem('won');
+          console.log('sumar 1');
+          wonGame = parseInt(wonGame) + 1;
+          const wonGames = localStorage.setItem('won', wonGame);
+        }
+
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
@@ -241,7 +379,15 @@ export const functionalityTtt = (numClick, divboxes) => {
         }
       }
     } else if (numClick.length === 0) {
-      const drawGames = localStorage.setItem('draw', 1);
+      if (!localStorage.getItem('draw')) {
+        const drawGames = localStorage.setItem('draw', 1);
+      } else {
+        let drawGame = localStorage.getItem('draw');
+        console.log('sumar 1');
+        drawGame = parseInt(drawGame) + 1;
+        const drawGames = localStorage.setItem('draw', drawGame);
+      }
+
       gameResult('A draw!');
       startBtn.textContent = 'Start';
       startButton();

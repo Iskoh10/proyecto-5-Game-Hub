@@ -28,6 +28,7 @@ body {
 
 .section_containerHome {
   flex-direction: var(--isc-dc);
+  gap: var(--isc-gap-m);
   position: var(--isc-p-abs);
   width: 700px;
   height: 800px;

@@ -4,6 +4,7 @@ import './Home.css';
 
 export const createHomePage = () => {
   document.body.innerHTML = '';
+  const dataProfile = JSON.parse(localStorage.getItem('myProfile'));
   const divBgHome = document.createElement('div');
   divBgHome.classList.add('div_bg_home', 'flex_container');
 
@@ -11,7 +12,7 @@ export const createHomePage = () => {
   sectionContainerHome.classList.add('section_containerHome', 'flex_container');
 
   const h2Home = document.createElement('h2');
-  h2Home.textContent = 'Welcome Peluca'; //! + valor del input nombre.
+  h2Home.textContent = `Welcome ${dataProfile[0].name}`; //! + valor del input nombre.
 
   const divH3Trilogy = document.createElement('div');
   divH3Trilogy.classList.add('div_h3_trilogy', 'flex_container');

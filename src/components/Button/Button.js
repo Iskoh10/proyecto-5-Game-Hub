@@ -1,4 +1,6 @@
 import { stickers } from '../../data/stickers';
+import { createLanding } from '../../pages/Landing/Landing';
+import { CheckLogin } from '../CheckingLogin/CheckingLogin';
 import './Button.css';
 
 export const createButton = ({ ownClass, text, parentNode }) => {
@@ -83,11 +85,39 @@ export const createButton = ({ ownClass, text, parentNode }) => {
       };
 
       validateForm();
+      inputName.value = '';
+      inputPassword.value = '';
+      inputConfirmPwd.value = '';
+      createLanding('createLogin');
       e.preventDefault();
     });
   } else if (ownClass === 'login') {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
       //! recoger inputUserName, inputPassword, comparar con los datos del localstorage y llamar al home, si no coinciden, borrar input.
+      const inputName = document.querySelector('#username');
+      const inputPassword = document.querySelector('#password');
+      if (inputName.value.length === 0) {
+        inputName.focus();
+      } else {
+        {
+          inputPassword.focus();
+        }
+      }
+
+      if (inputPassword.value.length === 0) {
+        inputPassword.focus();
+      } else if (
+        inputPassword.value.length !== 0 &&
+        inputName.value.length === 0
+      ) {
+        inputName.focus();
+      } else {
+        CheckLogin(inputName, inputPassword);
+        inputName.value = '';
+        inputPassword.value = '';
+      }
+
+      e.preventDefault();
     });
   }
 
