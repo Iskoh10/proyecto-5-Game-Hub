@@ -1,4 +1,5 @@
 import { gameResult, playerTurn } from '../../pages/Tictactoe/Tictactoe';
+import { functionalityProfileBtn } from '../FunctionProfileBtnTtt/FunctionProfileBtnTtt';
 import { startButton } from '../FunctionStartBtnTtt/FunctionStartBtnTtt';
 import './FunctionTtt.css';
 
@@ -36,6 +37,7 @@ export const functionalityTtt = (numClick, divboxes) => {
   const divbox9 = document.querySelector('.nine');
 
   const check = () => {
+    const btnProfile = document.querySelector('.btn_profile');
     const startBtn = document.querySelector('.btn_start_ttt');
     if (
       divbox1.textContent === divbox2.textContent &&
@@ -48,7 +50,6 @@ export const functionalityTtt = (numClick, divboxes) => {
       console.log('Partida ganada por: ' + divbox1.textContent);
       if (divbox1.textContent === 'X') {
         if (!localStorage.getItem('won')) {
-          console.log('Creamos tu perfil');
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
@@ -60,6 +61,8 @@ export const functionalityTtt = (numClick, divboxes) => {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -67,14 +70,15 @@ export const functionalityTtt = (numClick, divboxes) => {
         if (!localStorage.getItem('lost')) {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
-          let wonGame = localStorage.getItem('won');
+          let lostGame = localStorage.getItem('lost');
           console.log('sumar 1');
-          wonGame = parseInt(wonGame) + 1;
-          const wonGames = localStorage.setItem('won', wonGame);
+          lostGame = parseInt(lostGame) + 1;
+          const lostGames = localStorage.setItem('lost', lostGame);
         }
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -109,15 +113,16 @@ export const functionalityTtt = (numClick, divboxes) => {
         if (!localStorage.getItem('lost')) {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
-          let wonGame = localStorage.getItem('won');
+          let lostGame = localStorage.getItem('lost');
           console.log('sumar 1');
-          wonGame = parseInt(wonGame) + 1;
-          const wonGames = localStorage.setItem('won', wonGame);
+          lostGame = parseInt(lostGame) + 1;
+          const lostGames = localStorage.setItem('lost', lostGame);
         }
 
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -151,15 +156,16 @@ export const functionalityTtt = (numClick, divboxes) => {
         if (!localStorage.getItem('lost')) {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
-          let wonGame = localStorage.getItem('won');
+          let lostGame = localStorage.getItem('lost');
           console.log('sumar 1');
-          wonGame = parseInt(wonGame) + 1;
-          const wonGames = localStorage.setItem('won', wonGame);
+          lostGame = parseInt(lostGame) + 1;
+          const lostGames = localStorage.setItem('lost', lostGame);
         }
 
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -187,6 +193,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -194,15 +201,16 @@ export const functionalityTtt = (numClick, divboxes) => {
         if (!localStorage.getItem('lost')) {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
-          let wonGame = localStorage.getItem('won');
+          let lostGame = localStorage.getItem('lost');
           console.log('sumar 1');
-          wonGame = parseInt(wonGame) + 1;
-          const wonGames = localStorage.setItem('won', wonGame);
+          lostGame = parseInt(lostGame) + 1;
+          const lostGames = localStorage.setItem('lost', lostGame);
         }
 
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -230,6 +238,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -237,15 +246,16 @@ export const functionalityTtt = (numClick, divboxes) => {
         if (!localStorage.getItem('lost')) {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
-          let wonGame = localStorage.getItem('won');
+          let lostGame = localStorage.getItem('lost');
           console.log('sumar 1');
-          wonGame = parseInt(wonGame) + 1;
-          const wonGames = localStorage.setItem('won', wonGame);
+          lostGame = parseInt(lostGame) + 1;
+          const lostGames = localStorage.setItem('lost', lostGame);
         }
 
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -273,6 +283,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -280,15 +291,16 @@ export const functionalityTtt = (numClick, divboxes) => {
         if (!localStorage.getItem('lost')) {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
-          let wonGame = localStorage.getItem('won');
+          let lostGame = localStorage.getItem('lost');
           console.log('sumar 1');
-          wonGame = parseInt(wonGame) + 1;
-          const wonGames = localStorage.setItem('won', wonGame);
+          lostGame = parseInt(lostGame) + 1;
+          const lostGames = localStorage.setItem('lost', lostGame);
         }
 
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -316,6 +328,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -323,15 +336,16 @@ export const functionalityTtt = (numClick, divboxes) => {
         if (!localStorage.getItem('lost')) {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
-          let wonGame = localStorage.getItem('won');
+          let lostGame = localStorage.getItem('lost');
           console.log('sumar 1');
-          wonGame = parseInt(wonGame) + 1;
-          const wonGames = localStorage.setItem('won', wonGame);
+          lostGame = parseInt(lostGame) + 1;
+          const lostGames = localStorage.setItem('lost', lostGame);
         }
 
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -358,6 +372,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -365,15 +380,16 @@ export const functionalityTtt = (numClick, divboxes) => {
         if (!localStorage.getItem('lost')) {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
-          let wonGame = localStorage.getItem('won');
+          let lostGame = localStorage.getItem('lost');
           console.log('sumar 1');
-          wonGame = parseInt(wonGame) + 1;
-          const wonGames = localStorage.setItem('won', wonGame);
+          lostGame = parseInt(lostGame) + 1;
+          const lostGames = localStorage.setItem('lost', lostGame);
         }
 
         gameResult('You Loose!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -391,6 +407,7 @@ export const functionalityTtt = (numClick, divboxes) => {
       gameResult('A draw!');
       startBtn.textContent = 'Start';
       startButton();
+      functionalityProfileBtn(btnProfile);
       for (const divBox of divboxes) {
         divBox.removeEventListener('click', toDraw);
       }

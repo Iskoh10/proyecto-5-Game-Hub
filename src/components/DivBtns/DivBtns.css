@@ -1,0 +1,57 @@
+div.div_btns_ttt,
+div.div_btns_gw,
+div.div_btns_møm {
+  width: 100%;
+  justify-content: var(--isc-jc-sb);
+  padding: var(--isc-padding-s);
+}
+
+.btn_home {
+  font-family: 'Bubblegum Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--isc-br-xl);
+  background-color: red;
+  cursor: pointer;
+}
+
+.btn_home > p {
+  color: var(--isc-ht-color1);
+  font-size: var(--isc-fs-l);
+}
+
+.btn_home:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.btn_home:active {
+  opacity: 0.9;
+}
+
+.div_btns_ttt > h2 {
+  font-family: 'Bubblegum Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btn_profile {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--isc-br-xl);
+  background-color: var(--isc-ht-color5);
+  cursor: pointer;
+}
+
+.btn_profile:hover {
+  transform: scale(1.1);
+}
+
+.btn_profile > img {
+  width: 100%;
+  height: 100%;
+  padding: var(--isc-padding-s);
+  object-fit: contain;
+}

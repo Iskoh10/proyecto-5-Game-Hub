@@ -93,6 +93,10 @@ div.div_btns_ttt {
   cursor: pointer;
 }
 
+.btn_profile:hover {
+  transform: scale(1.1);
+}
+
 .btn_profile > img {
   width: 100%;
   height: 100%;
@@ -124,6 +128,26 @@ div.div_btns_ttt {
   backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid #ffffff2e;
+}
+
+.delete_data {
+  position: var(--isc-p-abs);
+  bottom: 20px;
+  padding: var(--isc-padding-s);
+  border-radius: 3em;
+  background-color: red;
+  font-size: var(--isc-fs-m);
+  color: var(--isc-ht-color1);
+  cursor: pointer;
+}
+
+.delete_data:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.delete_data:active {
+  opacity: 0.9;
 }
 
 .turn {

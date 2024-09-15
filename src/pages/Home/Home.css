@@ -98,3 +98,9 @@ section.section_Ttt {
   background-color: var(--isc-bg-btn-møm);
   box-shadow: var(--isc-bs-btn-møm);
 }
+
+section.section_Ttt:hover,
+section.section_Gw:hover,
+section.section_Møm:hover {
+  transform: scale(1.1);
+}
