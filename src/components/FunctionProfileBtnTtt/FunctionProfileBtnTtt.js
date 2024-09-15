@@ -22,7 +22,6 @@ const showDataProfile = () => {
 
 export const toInactivateProfileBtn = () => {
   const btnProfile = document.querySelector('.btn_profile');
-  console.log('hola?');
   btnProfile.removeEventListener('click', showDataProfile);
 };
 

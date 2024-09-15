@@ -1,7 +1,4 @@
 .aladin-regular {
-  font-family: 'Aladin', system-ui;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .div_bg_møm {
@@ -23,10 +20,75 @@
 }
 
 section.section_møm {
+  font-family: 'Aladin', system-ui;
+  font-weight: 400;
+  font-style: normal;
   width: 800px;
   height: 800px;
   border: 2px solid yellow;
   flex-direction: var(--isc-dc);
   justify-content: var(--isc-jc-fs);
-  background-color: white;
+  color: white;
+  background-color: black;
+}
+
+div.div_data_møm {
+  flex-direction: var(--isc-dc);
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(
+    to right,
+    rgba(97, 96, 96, 1) 0%,
+    rgba(143, 141, 143, 1) 28%,
+    rgba(138, 135, 138, 1) 72%,
+    rgba(97, 96, 96, 1) 97%,
+    rgba(97, 96, 96, 1) 100%
+  );
+  border: 2px groove grey;
+  position: relative;
+  border-radius: 20px;
+}
+
+.close_profile {
+  font-size: var(--isc-fs-l);
+  color: white;
+  position: var(--isc-p-abs);
+  top: 0;
+  right: 10px;
+  padding: var(--isc-padding-xs);
+  cursor: pointer;
+}
+
+div.div_data_møm > p {
+  font-size: var(--isc-fs-m);
+}
+
+.div_questions {
+  flex-direction: var(--isc-dc);
+  width: 500px;
+  height: 300px;
+  border: solid 1px #424542;
+  box-shadow: 2px 2px #e7dfe7, -2px -2px #e7dfe7, 2px -2px #e7dfe7,
+    -2px 2px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b, 0 2px #424542;
+  background-color: #04009d;
+  background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
+  border-radius: 7px;
+  position: var(--isc-p-rel);
+}
+
+.question {
+  margin-bottom: 0;
+  padding: var(--isc-padding-l);
+}
+
+div.div_answers {
+  flex-direction: var(--isc-dc);
+  align-items: flex-start;
+  gap: var(--isc-gap-s);
+  font-size: var(--isc-fs-m);
+}
+
+.cursor {
+  position: var(--isc-p-abs);
+  left: 30px;
 }

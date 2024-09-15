@@ -19,41 +19,6 @@ export const createTicTacToe = () => {
   sectionTtt.classList.add('section_ttt', 'flex_container');
 
   createDivBtns(sectionTtt, 'div_btns_ttt');
-  // const divBtnsTtt = document.createElement('div');
-  // divBtnsTtt.classList.add('div_btns_ttt', 'flex_container');
-
-  // const btnHome = document.createElement('div');
-  // btnHome.classList.add('btn_home', 'flex_container');
-  // btnHome.addEventListener('click', () => {
-  //   createHomePage();
-  // });
-  // const pBtnHome = document.createElement('p');
-  // pBtnHome.textContent = 'H';
-
-  // btnHome.appendChild(pBtnHome);
-
-  // const h2Ttt = document.createElement('h2');
-  // h2Ttt.className = 'h2_ttt';
-  // const dataProfile = JSON.parse(localStorage.getItem('myProfile'));
-  // h2Ttt.textContent = `Hola, ${dataProfile[0].name}`;
-
-  // const btnProfile = document.createElement('div');
-  // btnProfile.classList.add('btn_profile', 'flex_container');
-  // const imgProfile = document.createElement('img');
-
-  // const urlSticker = stickers.find(
-  //   (sticker) => sticker.value === parseInt(dataProfile[0].sticker)
-  // );
-
-  // imgProfile.src = urlSticker.url;
-
-  // btnProfile.appendChild(imgProfile);
-
-  // divBtnsTtt.appendChild(btnHome);
-  // divBtnsTtt.appendChild(h2Ttt);
-  // divBtnsTtt.appendChild(btnProfile);
-
-  // functionalityProfileBtn(btnProfile);
 
   const sectionGameTtt = document.createElement('section');
   sectionGameTtt.classList.add('section_game_ttt', 'flex_container');
