@@ -63,7 +63,7 @@ div.div_data_møm > p {
 
 .div_questions {
   flex-direction: var(--isc-dc);
-  width: 500px;
+  width: 700px;
   height: 300px;
   border: solid 1px #424542;
   box-shadow: 2px 2px #e7dfe7, -2px -2px #e7dfe7, 2px -2px #e7dfe7,
@@ -83,7 +83,7 @@ div.div_data_møm > p {
 div.div_answers {
   flex-direction: var(--isc-dc);
   align-items: flex-start;
-  gap: var(--isc-gap-m);
+  gap: var(--isc-gap-l);
 }
 
 .answer {

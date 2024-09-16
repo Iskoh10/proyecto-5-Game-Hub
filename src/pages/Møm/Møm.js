@@ -58,10 +58,10 @@ export const createMøm = () => {
   const btnProfileMøm = document.querySelector('.btn_profile');
   btnProfileMøm.addEventListener('click', showDataMøm);
 
-  const divQuestions = document.createElement('div');
-  divQuestions.classList.add('div_questions', 'flex_container');
+  const container = document.createElement('div');
+  container.classList.add('div_questions', 'flex_container');
 
-  sectionMøm.appendChild(divQuestions);
+  sectionMøm.appendChild(container);
 
   shuffleAnswers();
   answerFunc();
