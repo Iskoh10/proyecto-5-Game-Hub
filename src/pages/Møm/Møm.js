@@ -1,6 +1,8 @@
 import { answerFunc } from '../../components/AnswerFunc/AnswerFunc';
 import { createDivBtns } from '../../components/DivBtns/DivBtns';
 import { toInactivateProfileBtn } from '../../components/FunctionProfileBtnTtt/FunctionProfileBtnTtt';
+import { shuffleAnswers } from '../../components/ShuffleAnswers/ShuffleAnswers';
+import { survey } from '../../data/survey';
 import './Møm.css';
 
 export const createMøm = () => {
@@ -59,60 +61,8 @@ export const createMøm = () => {
   const divQuestions = document.createElement('div');
   divQuestions.classList.add('div_questions', 'flex_container');
 
-  const question = document.createElement('h3');
-  question.className = 'question';
-  question.textContent = '¿Cloud llegó a ser un miembro de SOLDADO de elite?';
-
-  const divAnswers = document.createElement('div');
-  divAnswers.classList.add('div_answers', 'flex_container');
-
-  const answerOne = document.createElement('div');
-  answerOne.className = 'answer';
-
-  const cursorOne = document.createElement('span');
-  cursorOne.className = 'cursor';
-  const imgCursorOne = document.createElement('img');
-  imgCursorOne.src = 'public/assets/cursor.png';
-  cursorOne.appendChild(imgCursorOne);
-
-  answerOne.textContent = 'Sí, trabajaba mano a mano con Zack.';
-
-  answerOne.appendChild(cursorOne);
-
-  const answerTwo = document.createElement('div');
-  answerTwo.className = 'answer';
-
-  const cursorTwo = document.createElement('span');
-  cursorTwo.className = 'cursor';
-  const imgCursorTwo = document.createElement('img');
-  imgCursorTwo.src = 'public/assets/cursor.png';
-  cursorTwo.style.visibility = 'hidden';
-  cursorTwo.appendChild(imgCursorTwo);
-
-  answerTwo.textContent = 'No, fue un soldado raso.';
-
-  answerTwo.appendChild(cursorTwo);
-
-  const answerThree = document.createElement('div');
-  answerThree.className = 'answer';
-
-  const cursorThree = document.createElement('span');
-  cursorThree.className = 'cursor';
-  const imgCursorThree = document.createElement('img');
-  imgCursorThree.src = 'public/assets/cursor.png';
-  cursorThree.style.visibility = 'hidden';
-  cursorThree.appendChild(imgCursorThree);
-
-  answerThree.textContent = 'No, fue un soldado de rango medio.';
-
-  answerThree.appendChild(cursorThree);
-
-  divQuestions.appendChild(question);
-  divAnswers.appendChild(answerOne);
-  divAnswers.appendChild(answerTwo);
-  divAnswers.appendChild(answerThree);
-  divQuestions.appendChild(divAnswers);
-
   sectionMøm.appendChild(divQuestions);
+
+  shuffleAnswers();
   answerFunc();
 };

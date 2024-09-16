@@ -1,3 +1,5 @@
+import { survey } from '../../data/survey';
+
 export const answerFunc = () => {
   let currentIndex = 0;
   const answers = document.querySelectorAll('.answer');
@@ -28,4 +30,18 @@ export const answerFunc = () => {
   });
 
   updateCursor(currentIndex);
+
+  const SelectionSound = new Audio('public/assets/selection.mp3');
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      SelectionSound.play();
+      const selectedAnswer = document.querySelector('.selected');
+
+      for (const answer of survey[0].answers) {
+        if (answer.id === selectedAnswer.id) {
+          console.log('respuesta Correcta');
+        } //! mirar el cotejo de respuesta con la respuesta correcta
+      }
+    }
+  });
 };
