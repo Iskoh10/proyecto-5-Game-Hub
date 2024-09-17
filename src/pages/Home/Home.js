@@ -49,6 +49,7 @@ export const createHomePage = () => {
   const sectionMøm = document.createElement('section');
   sectionMøm.classList.add('section_Møm', 'flex_container');
   sectionMøm.addEventListener('click', () => {
+    document.body.innerHTML = '';
     createMøm();
   });
   const imgMøm = document.createElement('img');

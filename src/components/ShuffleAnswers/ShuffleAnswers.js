@@ -1,4 +1,5 @@
 import { survey } from '../../data/survey';
+import { answerFunc } from '../AnswerFunc/AnswerFunc';
 
 export const shuffleAnswers = (numQuestion = 0) => {
   console.log(numQuestion);
@@ -45,4 +46,5 @@ export const shuffleAnswers = (numQuestion = 0) => {
     });
   };
   toPrintSurvey(survey);
+  answerFunc();
 };

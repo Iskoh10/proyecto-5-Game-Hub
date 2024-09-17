@@ -20,6 +20,7 @@ export const answerFunc = () => {
       }
     });
   };
+
   const MoveSound = new Audio('public/assets/moveCursor.mp3');
 
   document.addEventListener('keydown', (e) => {
@@ -34,58 +35,74 @@ export const answerFunc = () => {
   });
 
   updateCursor(currentIndex);
+};
 
-  const SelectionSound = new Audio('public/assets/selection.mp3');
-  let questionRight = 0;
+// const printQuestion = () => {
+//   document.body.innerHTML = '';
+//   const divContainer = document.createElement('div');
+//   divContainer.classList.add('div_container');
 
-  let isProcessing = false;
+//   const title = document.createElement('h2');
+//   title.textContent = survey[numQuestion].question;
 
-  const activeEnter = (e) => {
-    if (e.key === 'Enter' && !isProcessing) {
-      isProcessing = true;
+//   divContainer.appendChild(title);
+
+//   const divQuestion = document.createElement('div');
+//   divQuestion.classList.add('div_question');
+
+//   divContainer.appendChild(divQuestion);
+
+//   // survey[numQuestion].answers.forEach((answer) => {
+//   //   const p = document.createElement('p');
+//   //   p.textContent = answer.answer;
+
+//   //   divQuestion.appendChild(p);
+//   // });
+
+//   document.body.appendChild(divContainer);
+// };
+
+const SelectionSound = new Audio('public/assets/selection.mp3');
+let questionRight = 0;
+
+export const activeEnter = () => {
+  document.body.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
       SelectionSound.play();
-      const selectedAnswer = document.querySelector('.selected');
 
-      if (!selectedAnswer) {
-        isProcessing = false;
-        return;
-      }
-
-      const idSelected = parseInt(selectedAnswer.id);
-
-      const checkingAnswer = survey[numQuestion].answers.find(
-        (element) => element.id === idSelected && element.correct === true
-      );
-
-      if (checkingAnswer) {
-        questionRight += 1;
-        console.log('Correct answer!');
-      } else {
-        console.log('Wrong answer');
-      }
-      console.log('Removing event listener');
-      document.removeEventListener('keydown', activeEnter);
-
-      const allAnswers = document.querySelectorAll('.answer');
-      allAnswers.forEach((answer) => answer.classList.remove('selected'));
-
+      console.log(survey.length);
       if (numQuestion < survey.length - 1) {
         numQuestion += 1;
         shuffleAnswers(numQuestion);
-        answerFunc();
-
-        document.addEventListener('keydown', activeEnter);
       } else {
         console.log(
           'Congratulations, you completed the questionnaire! Your score: ' +
             questionRight
         );
+        numQuestion = 0;
       }
-      isProcessing = false;
-    }
-  };
-  console.log('Adding event listener');
-  document.addEventListener('keydown', activeEnter);
-};
+      // const selectedAnswer = document.querySelector('.selected');
 
+      // const idSelected = parseInt(selectedAnswer.id);
+
+      // const checkingAnswer = survey[numQuestion].answers.find(
+      //   (element) => element.id === idSelected && element.correct === true
+      // );
+
+      // if (checkingAnswer) {
+      //   questionRight += 1;
+      //   console.log('Correct answer!');
+      // } else {
+      //   console.log('Wrong answer');
+      // }
+
+      // console.log('Removing event listener');
+      // document.removeEventListener('keydown', activeEnter);
+
+      // const allAnswers = document.querySelectorAll('.answer');
+      // allAnswers.forEach((answer) => answer.classList.remove('selected'));
+    }
+  });
+};
+activeEnter();
 //! Me da error, la segunda pregunta hace como un duplicado.

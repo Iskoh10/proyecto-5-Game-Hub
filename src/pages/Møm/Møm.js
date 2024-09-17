@@ -63,6 +63,9 @@ export const createMøm = () => {
 
   sectionMøm.appendChild(container);
 
+  function resetNumQuestion() {
+    numQuestion = 0;
+  }
+  window.onload = resetNumQuestion;
   shuffleAnswers();
-  answerFunc();
 };
