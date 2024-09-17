@@ -28,12 +28,13 @@ section.section_møm {
   color: white;
   background-color: black;
   gap: var(--isc-gap-xl);
+  position: relative;
 }
 
 div.div_data_møm {
   flex-direction: var(--isc-dc);
   width: 400px;
-  height: 200px;
+  height: 300px;
   background: linear-gradient(
     to right,
     rgba(97, 96, 96, 1) 0%,
@@ -43,8 +44,12 @@ div.div_data_møm {
     rgba(97, 96, 96, 1) 100%
   );
   border: 2px groove grey;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -90%);
   border-radius: 20px;
+  z-index: 2;
 }
 
 .close_profile {
@@ -61,14 +66,23 @@ div.div_data_møm > p {
   font-size: var(--isc-fs-m);
 }
 
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000080;
+  z-index: 1;
+}
+
 .div_questions {
   flex-direction: var(--isc-dc);
   width: 700px;
   height: 300px;
-  border: solid 1px #424542;
+  border: 1px solid #424542;
   box-shadow: 2px 2px #e7dfe7, -2px -2px #e7dfe7, 2px -2px #e7dfe7,
     -2px 2px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b, 0 2px #424542;
-  background-color: #04009d;
   background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
   border-radius: 7px;
   position: var(--isc-p-rel);
@@ -83,6 +97,8 @@ div.div_data_møm > p {
 div.div_answers {
   flex-direction: var(--isc-dc);
   align-items: flex-start;
+  align-self: flex-start;
+  margin-left: var(--isc-margin-special);
   gap: var(--isc-gap-l);
 }
 
@@ -96,4 +112,53 @@ div.div_answers {
 .cursor {
   position: var(--isc-p-abs);
   left: 30px;
+}
+
+.div_control {
+  width: 50%;
+  gap: var(--isc-gap-m);
+}
+
+.div_finish,
+.div_restart {
+  width: 100px;
+  background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
+  border: 2px solid white;
+  border-radius: var(--isc-br-s);
+  cursor: pointer;
+}
+
+.div_finish > p,
+.div_restart > p {
+  padding: var(--isc-padding-s);
+  font-size: var(--isc-fs-m);
+}
+
+.div_finish:hover,
+.div_restart:hover {
+  transform: scale(1.1);
+}
+
+.div_finish:active,
+.div_restart:active {
+  transform: scale(0.9);
+}
+
+.final_message {
+  width: 300px;
+  height: 200px;
+  flex-direction: var(--isc-dc);
+  background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
+  border: 2px solid white;
+  border-radius: var(--isc-br-s);
+  position: var(--isc-p-abs);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.final_message > p {
+  font-size: var(--isc-fs-m);
 }

@@ -2,7 +2,6 @@ import { survey } from '../../data/survey';
 import { answerFunc } from '../AnswerFunc/AnswerFunc';
 
 export const shuffleAnswers = (numQuestion = 0) => {
-  console.log(numQuestion);
   const ToShuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));

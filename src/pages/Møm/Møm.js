@@ -1,8 +1,12 @@
-import { answerFunc } from '../../components/AnswerFunc/AnswerFunc';
+import {
+  questionRight,
+  restartValue,
+  sumScore,
+  toRestartScore
+} from '../../components/AnswerFunc/AnswerFunc';
 import { createDivBtns } from '../../components/DivBtns/DivBtns';
 import { toInactivateProfileBtn } from '../../components/FunctionProfileBtnTtt/FunctionProfileBtnTtt';
 import { shuffleAnswers } from '../../components/ShuffleAnswers/ShuffleAnswers';
-import { survey } from '../../data/survey';
 import './Møm.css';
 
 export const createMøm = () => {
@@ -19,7 +23,47 @@ export const createMøm = () => {
   divBgMøm.appendChild(sectionMøm);
   document.body.appendChild(divBgMøm);
 
+  const homeBtn = document.querySelector('.btn_home');
+  homeBtn.addEventListener('click', () => {
+    restartValue(0);
+  });
+
+  const btnProfile = document.querySelector('.btn_profile');
+  btnProfile.addEventListener('click', () => {
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    sectionMøm.appendChild(overlay);
+    showDataMøm();
+    sumScore();
+  });
+
   toInactivateProfileBtn();
+
+  const divDataMøm = document.createElement('div');
+  divDataMøm.classList.add('div_data_møm', 'flex_container');
+
+  const closeProfile = document.createElement('p');
+  closeProfile.className = 'close_profile';
+  closeProfile.textContent = 'X';
+  closeProfile.addEventListener('click', () => {
+    divDataMøm.style.opacity = '0';
+    const overlay = document.querySelector('.overlay');
+    overlay.remove();
+  });
+
+  const h3DataMøm = document.createElement('h3');
+  h3DataMøm.textContent = 'Your Best Score';
+
+  const initialScore = 0;
+  const pDataMøm = document.createElement('p');
+  pDataMøm.className = 'p_data_møm';
+  pDataMøm.textContent = initialScore + ' correct answers';
+
+  divDataMøm.appendChild(closeProfile);
+  divDataMøm.appendChild(h3DataMøm);
+  divDataMøm.appendChild(pDataMøm);
+
+  sectionMøm.appendChild(divDataMøm);
 
   const showDataMøm = () => {
     const divDataMøm = document.querySelector('.div_data_møm');
@@ -40,13 +84,18 @@ export const createMøm = () => {
     closeProfile.className = 'close_profile';
     closeProfile.textContent = 'X';
     closeProfile.addEventListener('click', () => {
-      divDataMøm.remove();
+      divDataMøm.style.opacity = '0';
+      const overlay = document.querySelector('.overlay');
+      overlay.remove();
     });
 
     const h3DataMøm = document.createElement('h3');
-    h3DataMøm.textContent = 'Your Score';
+    h3DataMøm.textContent = 'Your Best Score';
+
+    const initialScore = 0;
     const pDataMøm = document.createElement('p');
-    pDataMøm.textContent = `4 correct answers`; //! Aqui vendran los datos del localstorage
+    pDataMøm.className = 'p_data_møm';
+    pDataMøm.textContent = initialScore + ' correct answers';
 
     divDataMøm.appendChild(closeProfile);
     divDataMøm.appendChild(h3DataMøm);
@@ -55,17 +104,76 @@ export const createMøm = () => {
     sectionMøm.appendChild(divDataMøm);
   };
 
-  const btnProfileMøm = document.querySelector('.btn_profile');
-  btnProfileMøm.addEventListener('click', showDataMøm);
-
   const container = document.createElement('div');
   container.classList.add('div_questions', 'flex_container');
 
   sectionMøm.appendChild(container);
 
-  function resetNumQuestion() {
-    numQuestion = 0;
-  }
-  window.onload = resetNumQuestion;
   shuffleAnswers();
+
+  const divControl = document.createElement('div');
+  divControl.classList.add('div_control', 'flex_container');
+
+  const divRestart = document.createElement('div');
+  divRestart.classList.add('div_restart', 'flex_container');
+
+  const pRestart = document.createElement('p');
+  pRestart.textContent = 'Restart';
+
+  divRestart.appendChild(pRestart);
+
+  const toRestart = () => {
+    console.log('Reiniciar');
+    restartValue(0, true);
+  };
+
+  divRestart.addEventListener('click', toRestart);
+
+  const divFinish = document.createElement('div');
+  divFinish.classList.add('div_finish', 'flex_container');
+
+  const pFinish = document.createElement('p');
+  pFinish.textContent = 'Finish';
+
+  divFinish.appendChild(pFinish);
+
+  const toFinish = () => {
+    console.log('Acabar');
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    const finalMessage = document.createElement('div');
+    finalMessage.classList.add('final_message', 'flex_container');
+
+    const closeFM = document.createElement('p');
+    closeFM.className = 'close_profile';
+    closeFM.textContent = 'X';
+    closeFM.addEventListener('click', () => {
+      finalMessage.remove();
+      const overlay = document.querySelector('.overlay');
+      overlay.remove();
+    });
+
+    const finalTitle = document.createElement('h3');
+    finalTitle.textContent = 'Your Score is:';
+    const pFinalMessage = document.createElement('p');
+    pFinalMessage.textContent = `${questionRight}  correct answers`;
+
+    finalMessage.appendChild(closeFM);
+    finalMessage.appendChild(finalTitle);
+    finalMessage.appendChild(pFinalMessage);
+
+    sectionMøm.appendChild(overlay);
+    sectionMøm.appendChild(finalMessage);
+
+    toRestart();
+    toRestartScore();
+  };
+
+  divFinish.addEventListener('click', toFinish);
+
+  divControl.appendChild(divRestart);
+  divControl.appendChild(divFinish);
+  sectionMøm.appendChild(divControl);
 };
+
+//! tengo que solucionar el crear el p del perfil para poder actualizar cuando se da al enter, o cambiar que p se actualice cuando das al btnprofile.
