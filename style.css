@@ -80,8 +80,22 @@
   --isc-bs-start-btn-ttt-hover: 0 0 0 0 var(--isc-lp-color10);
 
   --isc-b-grid-ttt: 5px solid var(--isc-lp-color10);
-  /* FONTS */
 
+  /* Home Møm */
+  --isc-hm-color1: #04009d;
+  --isc-hm-color2: #06004d;
+  --isc-hm-color3: #00000080;
+
+  --isc-bg-hm-1: linear-gradient(
+    to bottom,
+    var(--isc-hm-color1) 0%,
+    var(--isc-hm-color2) 100%
+  );
+
+  --isc-b-hm: 2px solid var(--isc-hp-color5);
+  --isc-overlay-color: var(--isc-hm-color3);
+
+  /* FONTS */
   --isc-fs-s: 16px;
   --isc-fs-m: 24px;
   --isc-fs-l: 36px;
@@ -131,6 +145,7 @@
 
   /* border */
   /* border radius */
+  --isc-br-xs: 7px;
   --isc-br-s: 20px;
 
   --isc-br-xl: 50%;

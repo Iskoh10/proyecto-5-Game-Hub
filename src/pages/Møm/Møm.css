@@ -22,13 +22,52 @@ section.section_møm {
   font-style: normal;
   width: 800px;
   height: 800px;
-  border: 2px solid yellow;
   flex-direction: var(--isc-dc);
   justify-content: var(--isc-jc-fs);
-  color: white;
-  background-color: black;
+  color: var(--isc-hp-color5);
+  background-color: var(--isc-lp-color1);
   gap: var(--isc-gap-xl);
-  position: relative;
+  position: var(--isc-p-rel);
+}
+
+.div_rules {
+  width: 600px;
+  flex-direction: var(--isc-dc);
+  position: var(--isc-p-abs);
+  top: 50%;
+  left: 50%;
+  background: var(--isc-bg-hm-1);
+  border: var(--isc-b-hm);
+  transform: translate(-50%, -50%);
+  border-radius: var(--isc-br-s);
+  padding: var(--isc-padding-l);
+  gap: var(--isc-gap-m);
+  z-index: 2;
+}
+
+.div_rules p {
+  width: 80%;
+  font-size: var(--isc-fs-m);
+}
+
+.btn_accept {
+  width: 100px;
+  padding: var(--isc-padding-s);
+  border: var(--isc-b-hm);
+  border-radius: var(--isc-br-s);
+  cursor: pointer;
+}
+
+.btn_accept > p {
+  text-align: center;
+}
+
+.btn_accept:hover {
+  transform: scale(1.1);
+}
+
+.btn_accept:active {
+  transform: scale(1);
 }
 
 div.div_data_møm {
@@ -37,24 +76,24 @@ div.div_data_møm {
   height: 300px;
   background: linear-gradient(
     to right,
-    rgba(97, 96, 96, 1) 0%,
-    rgba(143, 141, 143, 1) 28%,
-    rgba(138, 135, 138, 1) 72%,
-    rgba(97, 96, 96, 1) 97%,
-    rgba(97, 96, 96, 1) 100%
+    #616060 0%,
+    #8f8d8f 28%,
+    #8a878a 72%,
+    #616060 97%,
+    #616060 100%
   );
-  border: 2px groove grey;
-  position: absolute;
+  border: var(--isc-b-hm);
+  position: var(--isc-p-abs);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -90%);
-  border-radius: 20px;
+  border-radius: var(--isc-br-s);
   z-index: 2;
 }
 
 .close_profile {
   font-size: var(--isc-fs-l);
-  color: white;
+  color: var(--isc-hm-color5);
   position: var(--isc-p-abs);
   top: 0;
   right: 10px;
@@ -66,13 +105,33 @@ div.div_data_møm > p {
   font-size: var(--isc-fs-m);
 }
 
+.container_img {
+  margin-top: var(--isc-margin-l);
+  overflow: hidden;
+  width: 320px;
+  height: 100px;
+  z-index: 3;
+}
+
+.container_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: clip-path 5s ease;
+  clip-path: inset(0 100% 0 0);
+}
+
+img.unsheathe {
+  clip-path: inset(0 0 0 0);
+}
+
 .overlay {
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: var(--isc-p-fix);
   top: 0;
   left: 0;
-  background-color: #00000080;
+  background-color: var(--isc-overlay-color);
   z-index: 1;
 }
 
@@ -80,11 +139,9 @@ div.div_data_møm > p {
   flex-direction: var(--isc-dc);
   width: 700px;
   height: 300px;
-  border: 1px solid #424542;
-  box-shadow: 2px 2px #e7dfe7, -2px -2px #e7dfe7, 2px -2px #e7dfe7,
-    -2px 2px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b, 0 2px #424542;
-  background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
-  border-radius: 7px;
+  border: var(--isc-b-hm);
+  background: var(--isc-bg-hm-1);
+  border-radius: var(--isc-br-xs);
   position: var(--isc-p-rel);
 }
 
@@ -96,7 +153,7 @@ div.div_data_møm > p {
 
 div.div_answers {
   flex-direction: var(--isc-dc);
-  align-items: flex-start;
+  align-items: var(--isc-ai-fs);
   align-self: flex-start;
   margin-left: var(--isc-margin-special);
   gap: var(--isc-gap-l);
@@ -104,7 +161,7 @@ div.div_answers {
 
 .answer {
   flex-direction: var(--isc-dc);
-  align-items: flex-start;
+  align-items: var(--isc-ai-fs);
   gap: var(--isc-gap-s);
   font-size: var(--isc-fs-m);
 }
@@ -122,8 +179,8 @@ div.div_answers {
 .div_finish,
 .div_restart {
   width: 100px;
-  background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
-  border: 2px solid white;
+  background: var(--isc-bg-hm-1);
+  border: var(--isc-b-hm);
   border-radius: var(--isc-br-s);
   cursor: pointer;
 }
@@ -148,14 +205,14 @@ div.div_answers {
   width: 300px;
   height: 200px;
   flex-direction: var(--isc-dc);
-  background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
-  border: 2px solid white;
+  background: var(--isc-bg-hm-1);
+  border: var(--isc-b-hm);
   border-radius: var(--isc-br-s);
   position: var(--isc-p-abs);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 20px;
+  border-radius: var(--isc-br-s);
   z-index: 2;
 }
 

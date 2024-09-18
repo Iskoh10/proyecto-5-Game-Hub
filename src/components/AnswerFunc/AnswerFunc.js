@@ -5,9 +5,8 @@ import { shuffleAnswers } from '../ShuffleAnswers/ShuffleAnswers';
 let numQuestion = 0;
 
 export const restartValue = (value, go) => {
-  console.log(numQuestion);
   numQuestion = value;
-  console.log(numQuestion);
+
   if (go) {
     shuffleAnswers();
   }
@@ -74,7 +73,6 @@ export const activeEnter = () => {
 
       const selectedAnswer = document.querySelector('.selected');
       const idSelected = parseInt(selectedAnswer.id);
-      console.log(idSelected);
 
       const checkingAnswer = survey[numQuestion].answers.find(
         (element) => element.id === idSelected && element.correct === true
