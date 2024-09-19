@@ -78,7 +78,6 @@ export const createMøm = () => {
       unsheathe.classList.remove('unsheathe');
     });
 
-    //!
     const containerImg = document.createElement('div');
     containerImg.classList.add('container_img', 'flex_container');
 
@@ -87,8 +86,6 @@ export const createMøm = () => {
     imgSword.src = 'public/assets/sword.png';
 
     containerImg.appendChild(imgSword);
-
-    //!
 
     const h3DataMøm = document.createElement('h3');
     h3DataMøm.textContent = 'Your Best Score';
@@ -167,11 +164,6 @@ export const createMøm = () => {
 
     divRestart.appendChild(pRestart);
 
-    const toRestart = () => {
-      console.log('Reiniciar');
-      restartValue(0, true);
-    };
-
     divRestart.addEventListener('click', toRestart);
 
     const divFinish = document.createElement('div');
@@ -182,42 +174,66 @@ export const createMøm = () => {
 
     divFinish.appendChild(pFinish);
 
-    const toFinish = () => {
-      console.log('Acabar');
-      const overlay = document.createElement('div');
-      overlay.className = 'overlay';
-      const finalMessage = document.createElement('div');
-      finalMessage.classList.add('final_message', 'flex_container');
-
-      const closeFM = document.createElement('p');
-      closeFM.className = 'close_profile';
-      closeFM.textContent = 'X';
-      closeFM.addEventListener('click', () => {
-        finalMessage.remove();
-        const overlay = document.querySelector('.overlay');
-        overlay.remove();
-      });
-
-      const finalTitle = document.createElement('h3');
-      finalTitle.textContent = 'Your Score is:';
-      const pFinalMessage = document.createElement('p');
-      pFinalMessage.textContent = `${questionRight}  correct answers`;
-
-      finalMessage.appendChild(closeFM);
-      finalMessage.appendChild(finalTitle);
-      finalMessage.appendChild(pFinalMessage);
-
-      sectionMøm.appendChild(overlay);
-      sectionMøm.appendChild(finalMessage);
-
-      toRestart();
-      toRestartScore();
-    };
-
     divFinish.addEventListener('click', toFinish);
 
     divControl.appendChild(divRestart);
     divControl.appendChild(divFinish);
     sectionMøm.appendChild(divControl);
   };
+};
+
+export const toRestart = () => {
+  console.log('Reiniciar');
+  restartValue(0, true);
+};
+
+export const toFinish = (completed) => {
+  console.log('Acabar');
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  const finalMessage = document.createElement('div');
+  finalMessage.classList.add('final_message', 'flex_container');
+
+  const closeFM = document.createElement('p');
+  closeFM.className = 'close_profile';
+  closeFM.textContent = 'X';
+  closeFM.addEventListener('click', () => {
+    finalMessage.remove();
+    const overlay = document.querySelector('.overlay');
+    overlay.remove();
+  });
+
+  const finalTitle = document.createElement('h3');
+  finalTitle.textContent = 'Your Score is:';
+  const pFinalMessage = document.createElement('p');
+  pFinalMessage.textContent = `${questionRight}  correct answers`;
+
+  finalMessage.appendChild(closeFM);
+  finalMessage.appendChild(finalTitle);
+  finalMessage.appendChild(pFinalMessage);
+
+  const sectionMøm = document.querySelector('.section_møm');
+  sectionMøm.appendChild(overlay);
+  sectionMøm.appendChild(finalMessage);
+
+  if (completed) {
+    finalMessage.classList.add('completed');
+    const title = document.createElement('h2');
+    title.className = 'title_completed';
+    title.textContent = 'Congratulations you finished';
+    finalMessage.appendChild(title);
+    if (questionRight === 25) {
+      const divCloud = document.createElement('div');
+      divCloud.classList.add('div_cloud', 'flex_container');
+      const cloudImg = document.createElement('img');
+      cloudImg.src = 'public/assets/cloud.webp';
+
+      divCloud.appendChild(cloudImg);
+
+      finalMessage.appendChild(divCloud);
+    }
+  }
+
+  toRestart();
+  toRestartScore();
 };

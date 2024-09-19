@@ -1,5 +1,5 @@
 import { survey } from '../../data/survey';
-import { createMøm } from '../../pages/Møm/Møm';
+import { createMøm, toFinish } from '../../pages/Møm/Møm';
 import { shuffleAnswers } from '../ShuffleAnswers/ShuffleAnswers';
 
 let numQuestion = 0;
@@ -95,6 +95,11 @@ export const activeEnter = () => {
           'Congratulations, you completed the questionnaire! Your score: ' +
             questionRight
         );
+        toFinish('completed');
+      }
+
+      if (numQuestion === 25) {
+        toFinish(completed);
       }
     }
   });

@@ -219,3 +219,13 @@ div.div_answers {
 .final_message > p {
   font-size: var(--isc-fs-m);
 }
+
+.completed {
+  width: 350px;
+  height: 600px;
+}
+
+.title_completed {
+  text-align: center;
+  margin-top: var(--isc-margin-l);
+}
