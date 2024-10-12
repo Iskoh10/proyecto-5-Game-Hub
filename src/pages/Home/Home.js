@@ -42,14 +42,13 @@ export const createHomePage = () => {
   });
 
   const imgGm = document.createElement('img');
-  imgGm.src = 'public/assets/gwgame.svg';
+  imgGm.src = 'public/assets/gwgame.png';
 
   sectionGmoWorld.appendChild(imgGm);
 
   const sectionMøm = document.createElement('section');
   sectionMøm.classList.add('section_Møm', 'flex_container');
   sectionMøm.addEventListener('click', () => {
-    document.body.innerHTML = '';
     createMøm();
   });
   const imgMøm = document.createElement('img');

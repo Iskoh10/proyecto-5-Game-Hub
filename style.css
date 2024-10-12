@@ -95,6 +95,12 @@
   --isc-b-hm: 2px solid var(--isc-hp-color5);
   --isc-overlay-color: var(--isc-hm-color3);
 
+  /* Home GW */
+  --isc-hgw-color1: var(--isc-hp-color5);
+  --isc-hgw-color2: var(--isc-lp-color10);
+  --isc-hgw-color3: var(--isc-lp-color6);
+  --isc-hgw-color4: var(--isc-lp-color5);
+
   /* FONTS */
   --isc-fs-s: 16px;
   --isc-fs-m: 24px;
@@ -140,6 +146,7 @@
   --isc-jc-fs: flex-start;
 
   --isc-ai-center: center;
+  --isc-ai-fs: flex-start;
 
   --isc-dc: column;
 

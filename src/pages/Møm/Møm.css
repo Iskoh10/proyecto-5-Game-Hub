@@ -229,3 +229,59 @@ div.div_answers {
   text-align: center;
   margin-top: var(--isc-margin-l);
 }
+
+@media screen and (min-width: 360px) {
+  section.section_møm {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  section.section_møm {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .div_rules {
+    width: 90%;
+  }
+
+  .div_rules p {
+    width: 90%;
+  }
+
+  div.div_data_møm {
+    width: 90%;
+  }
+
+  .div_questions {
+    width: 90%;
+    height: 50%;
+  }
+
+  .question_title {
+    font-size: var(--isc-fs-m);
+  }
+
+  div.div_answers {
+    width: 80%;
+    margin-left: var(--isc-margin-xl);
+  }
+
+  .answer {
+    position: var(--isc-p-rel);
+    margin-left: var(--isc-margin-s);
+  }
+
+  .cursor {
+    top: 8px;
+    left: -50px;
+  }
+
+  .cursor > img {
+    width: 80%;
+  }
+
+  .title_completed {
+    width: 90%;
+  }
+}

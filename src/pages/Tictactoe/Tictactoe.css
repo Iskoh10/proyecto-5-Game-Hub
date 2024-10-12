@@ -165,7 +165,7 @@ section.section_ttt {
   display: var(--isc-d-grid);
   place-items: center;
   font-size: var(--isc-special-fs);
-  font-weight: 600;
+  font-weight: var(--isc-fw-1);
 }
 
 .btn_start_ttt {
@@ -190,4 +190,35 @@ section.section_ttt {
 
 .btn_start_ttt:active {
   filter: hue-rotate(1.5rad);
+}
+
+@media screen and (min-width: 360px) {
+  section.section_ttt {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .h2_ttt {
+    font-size: var(--isc-fs-m);
+  }
+
+  .section_game_ttt {
+    width: 300px;
+    height: 300px;
+  }
+
+  .div_grid_ttt {
+    width: 100%;
+    height: 100%;
+  }
+
+  .square {
+    width: 99px;
+    height: 99px;
+    font-size: var(--isc-special-fs);
+  }
+
+  .data_profile {
+    width: 300px;
+  }
 }

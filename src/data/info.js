@@ -10,8 +10,7 @@ export const info = [
     id: 'GW',
     name: 'Gmo World',
     color: '#fc9cb9',
-    details:
-      'You will have to survive in a enviroment where genetic modification has poisoned the world. Can you save the planet?'
+    details: 'Find the matched cards.'
   },
   {
     id: 'Møm',

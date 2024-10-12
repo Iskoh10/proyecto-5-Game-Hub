@@ -1,8 +1,4 @@
-.arbutus-regular {
-  font-family: 'Arbutus', serif;
-  font-weight: 400;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Arbutus&display=swap');
 
 .div_bg_gw {
   width: 100%;
@@ -32,10 +28,247 @@
 }
 
 section.section_gw {
+  font-family: 'Arbutus', serif;
   width: 800px;
   height: 800px;
-  border: 2px solid yellow;
   flex-direction: var(--isc-dc);
   justify-content: var(--isc-jc-fs);
-  background-color: white;
+  background-color: var(--isc-hgw-color1);
+}
+
+.div_profile {
+  width: 400px;
+  height: 400px;
+  border-radius: var(--isc-br-s);
+  position: var(--isc-p-abs);
+  top: 300px;
+  background: radial-gradient(circle, #caccc4 0%, #757474 100%);
+  cursor: pointer;
+  flex-direction: var(--isc-dc);
+}
+
+.close_x {
+  position: var(--isc-p-abs);
+  top: 5px;
+  right: 10px;
+  color: var(--isc-hgw-color2);
+}
+
+.won_p {
+  font-size: var(--isc-fs-m);
+}
+
+.div_container_gw {
+  position: var(--isc-p-abs);
+  top: 25%;
+  display: var(--isc-d-grid);
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(4, 150px);
+  background-image: url('public/assets/bgCard.jpeg');
+  background-position: center center;
+}
+
+.div_level {
+  font-size: var(--isc-fs-m);
+  gap: var(--isc-gap-m);
+}
+
+#level {
+  border-radius: var(--isc-br-s);
+  font-size: var(--isc-fs-m);
+  padding: var(--isc-padding-s);
+}
+
+option:hover {
+  background-color: var(--isc-hgw-color3);
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  border: 1px solid var(--isc-hgw-color1);
+}
+
+.inner_card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.card.flip .inner_card {
+  transform: rotateY(0deg);
+}
+
+.card.matched .inner_card {
+  transform: rotateY(0deg);
+  cursor: default;
+}
+
+.front_card,
+.back_card {
+  position: var(--isc-p-abs);
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  font-size: var(--isc-fs-xl);
+  border: 1px solid var(--isc-hgw-color2);
+  border-radius: var(--isc-br-s);
+}
+
+.front_card {
+  background-color: var(--isc-hgw-color1);
+}
+
+.back_card {
+  background-color: var(--isc-hgw-color2);
+  color: var(--isc-hgw-color1);
+  transform: rotateY(180deg);
+}
+
+.p_win {
+  font-size: var(--isc-fs-l);
+  color: var(--isc-hgw-color4);
+  font-weight: var(--isc-fw-1);
+  transition: all 1s;
+  animation: pulseWin 1s infinite;
+}
+
+@keyframes pulseWin {
+  0% {
+    font-size: var(--isc-fs-m);
+  }
+  100% {
+    font-size: var(--isc-fs-xl);
+  }
+}
+
+.btn_reboot {
+  border: 1px solid var(--isc-hgw-color2);
+  border-radius: var(--isc-br-s);
+  margin: var(--isc-margin-xs);
+  padding: var(--isc-padding-s);
+  cursor: pointer;
+}
+
+.btn_reboot:hover {
+  background-color: var(--isc-hgw-color2);
+  color: var(--isc-hgw-color1);
+  transform: scale(1.1);
+}
+
+.btn_reboot:active {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+.btn_reboot > p {
+  font-size: var(--isc-fs-m);
+  font-weight: var(--isc-fw-1);
+}
+
+.p_1,
+.p_2 {
+  font-size: var(--isc-special-fs);
+  font-weight: var(--isc-fw-1);
+  justify-self: center;
+  align-self: center;
+}
+
+.p_1 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: right;
+  animation: startCardP1 3s ease-in forwards, scale 2s forwards 2s;
+}
+
+.p_2 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  animation: startCardP2 4s ease-in forwards;
+}
+
+.p_3 {
+  grid-column: 3/5;
+  grid-row: 3/3;
+  font-size: 36px;
+  font-weight: var(--isc-fw-1);
+  opacity: 0;
+  animation: startCardP3 4s ease-in forwards 3s;
+}
+
+@keyframes startCardP1 {
+  0% {
+    justify-self: left;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    justify-self: right;
+    opacity: 1;
+  }
+}
+
+@keyframes startCardP2 {
+  0% {
+    justify-self: right;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    justify-self: left;
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+@keyframes startCardP3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  section.section_gw {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  div.div_level {
+    display: none;
+  }
+
+  .card {
+    width: 75px;
+    height: 75px;
+  }
+
+  .div_profile {
+    width: 90%;
+    top: 200px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  /*! Modificar el js para que funcione como en escritorio*/
+  div.div_level {
+    display: flex;
+  }
 }

@@ -2,7 +2,7 @@
   display: none;
   color: var(--isc-fc-span-error);
   letter-spacing: 3px;
-  font-weight: 600;
+  font-weight: var(--isc-fw-1);
 }
 
 .div_sticker {
@@ -106,7 +106,7 @@ div.div_foot_sign p,
 .p_login:hover,
 .p_sign_up:hover {
   font-size: var(--isc-fs-m);
-  font-weight: 600;
+  font-weight: var(--isc-fw-1);
 }
 
 .input_check {

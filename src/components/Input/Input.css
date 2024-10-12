@@ -20,5 +20,5 @@ div.div_form {
   display: none;
   color: var(--isc-fc-span-error);
   letter-spacing: 5px;
-  font-weight: 600;
+  font-weight: var(--isc-fw-1);
 }

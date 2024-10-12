@@ -86,7 +86,7 @@
 .gw_btn:hover,
 .møm_btn:hover {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: var(--isc-fw-1);
 }
 
 .active .menu_btn {
