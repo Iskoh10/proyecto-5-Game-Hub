@@ -105,7 +105,7 @@ section.section_Møm:hover {
   transform: scale(1.1);
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 320px) and (max-width: 414px) {
   .section_containerHome {
     width: 100vw;
     height: 100vh;
@@ -168,18 +168,14 @@ section.section_Møm:hover {
   }
 }
 
-@media screen and (min-width: 720px) {
-  .btn_exit {
-    right: -550px;
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .section_containerHome {
+    width: 100vw;
+    height: 100vh;
   }
 
-  .h2_ttt {
-    font-size: var(--isc-fs-l);
-  }
-
-  section.section_game_ttt {
-    width: 80%;
-    height: 80%;
+  .div_btns {
+    position: relative;
   }
 
   .square {
@@ -191,16 +187,7 @@ section.section_Møm:hover {
     width: 90%;
     font-size: var(--isc-fs-l);
   }
+}
 
-  div.div_answers {
-    margin-left: var(--isc-margin-special);
-  }
-
-  .answer {
-    font-size: var(--isc-fs-m);
-  }
-
-  .cursor {
-    left: -60px;
-  }
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
 }

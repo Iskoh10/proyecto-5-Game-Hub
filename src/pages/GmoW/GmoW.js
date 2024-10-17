@@ -29,11 +29,23 @@ export const createGmoW = () => {
       levelSel(8);
       blockSel();
     } else if (selectLevel.value === 'amateur') {
-      console.log(selectLevel.value);
-      divContainerGW.style.gridTemplateColumns = 'repeat(5, 150px)';
-      divContainerGW.style.gridTemplateRows = 'repeat(4, 150px)';
-      levelSel(10);
-      blockSel();
+      if (window.innerWidth >= 600 && window.innerWidth <= 800) {
+        divContainerGW.style.gridTemplateColumns = 'repeat(5, 120px)';
+        divContainerGW.style.gridTemplateRows = 'repeat(4, 120px)';
+        levelSel(10);
+        blockSel();
+        const cards = document.querySelectorAll('.card');
+        console.log(cards);
+        for (const card of cards) {
+          card.classList.add('amateur');
+        }
+      } else if (window.innerWidth > 800) {
+        console.log(selectLevel.value);
+        divContainerGW.style.gridTemplateColumns = 'repeat(5, 150px)';
+        divContainerGW.style.gridTemplateRows = 'repeat(4, 150px)';
+        levelSel(10);
+        blockSel();
+      }
     } else if (selectLevel.value === 'skilled') {
       console.log(selectLevel.value);
       sectionGW.style.width = '950px';
@@ -273,7 +285,10 @@ export const createGmoW = () => {
       unLockSel();
     }
   });
-  const mediaQSmall = window.matchMedia('(min-width: 360px)');
+
+  const mediaQSmall = window.matchMedia(
+    '(min-width: 320px) and (max-width: 600px)'
+  );
 
   function smallScreen(e) {
     if (e.matches) {
@@ -285,6 +300,15 @@ export const createGmoW = () => {
   }
 
   mediaQSmall.addEventListener('change', smallScreen);
-
-  smallScreen(mediaQSmall);
+  if (window.innerWidth >= 320 && window.innerWidth <= 600) {
+    smallScreen(mediaQSmall);
+  } else {
+    const clickGmoW = () => {
+      const gmoWButton = document.querySelector('.section_Gw');
+      if (gmoWButton) {
+        gmoWButton.click;
+      }
+    };
+    clickGmoW();
+  }
 };
