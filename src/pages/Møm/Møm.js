@@ -71,7 +71,7 @@ export const createMøm = () => {
     closeProfile.className = 'close_profile';
     closeProfile.textContent = 'X';
     closeProfile.addEventListener('click', () => {
-      divDataMøm.style.opacity = '0';
+      divDataMøm.style.display = 'none';
       const overlay = document.querySelector('.overlay');
       overlay.remove();
       const unsheathe = document.querySelector('#sword');

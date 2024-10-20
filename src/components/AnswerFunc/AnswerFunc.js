@@ -43,6 +43,21 @@ export const answerFunc = () => {
   });
 
   updateCursor(currentIndex);
+
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('answer')) {
+      console.log('hola');
+    }
+  });
+
+  for (let i = 0; i < answers.length; i++) {
+    answers[i].addEventListener('click', () => {
+      currentIndex = i;
+      SelectionSound.play();
+      updateCursor(currentIndex);
+      activeEnter();
+    });
+  }
 };
 
 export const toRestartScore = () => {
@@ -102,6 +117,44 @@ export const activeEnter = () => {
         toFinish(completed);
       }
     }
+  });
+
+  // En movil y tablet
+  const answerElements = document.querySelectorAll('.answer');
+  answerElements.forEach((answer) => {
+    answer.addEventListener('click', () => {
+      SelectionSound.play();
+
+      const idSelected = parseInt(answer.id);
+
+      const checkingAnswer = survey[numQuestion].answers.find(
+        (element) => element.id === idSelected && element.correct === true
+      );
+
+      if (checkingAnswer) {
+        questionRight += 1;
+        sumScore(1);
+        console.log('Correct answer!');
+      } else {
+        console.log('Wrong answer');
+      }
+
+      console.log(survey.length);
+      if (numQuestion < survey.length - 1) {
+        numQuestion += 1;
+        shuffleAnswers(numQuestion);
+      } else {
+        console.log(
+          'Congratulations, you completed the questionnaire! Your score: ' +
+            questionRight
+        );
+        toFinish('completed');
+      }
+
+      if (numQuestion === 25) {
+        toFinish(completed);
+      }
+    });
   });
 };
 activeEnter();
