@@ -128,19 +128,19 @@ div.div_foot_sign p,
 }
 
 #bee {
-  background-image: url('public/assets/abeja.png');
+  background-image: url('/assets/abeja.png');
 }
 
 #cherry {
-  background-image: url('public/assets/cherries.png');
+  background-image: url('/assets/cherries.png');
 }
 
 #flamingo {
-  background-image: url('public/assets/flamingo.png');
+  background-image: url('/assets/flamingo.png');
 }
 
 #flower {
-  background-image: url('public/assets/nasturtium.png');
+  background-image: url('/assets/nasturtium.png');
 }
 
 .input_check:checked + .label_check:before {
