@@ -65,7 +65,7 @@ section.section_Gw,
 section.section_Møm {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: var(--isc-br-xl);
   cursor: pointer;
 }
 
@@ -105,7 +105,7 @@ section.section_Møm:hover {
   transform: scale(1.1);
 }
 
-@media screen and (min-width: 320px) and (max-width: 414px) {
+@media screen and (min-width: 320px) and (max-width: 600px) {
   .section_containerHome {
     width: 100vw;
     height: 100vh;
@@ -168,7 +168,7 @@ section.section_Møm:hover {
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1024px) {
+@media screen and (min-width: 601px) and (max-width: 1024px) {
   .section_containerHome {
     width: 100vw;
     height: 100vh;
@@ -187,7 +187,4 @@ section.section_Møm:hover {
     width: 90%;
     font-size: var(--isc-fs-l);
   }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1600px) {
 }

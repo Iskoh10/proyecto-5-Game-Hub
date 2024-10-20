@@ -6,7 +6,17 @@ import './Home.css';
 
 export const createHomePage = () => {
   document.body.innerHTML = '';
+
+  const userProfile = {
+    name: 'Friend',
+    password: 'password',
+    sticker: 1
+  };
+
+  localStorage.setItem('myProfile', JSON.stringify(userProfile));
+
   const dataProfile = JSON.parse(localStorage.getItem('myProfile'));
+
   const divBgHome = document.createElement('div');
   divBgHome.classList.add('div_bg_home', 'flex_container');
 
@@ -14,7 +24,7 @@ export const createHomePage = () => {
   sectionContainerHome.classList.add('section_containerHome', 'flex_container');
 
   const h2Home = document.createElement('h2');
-  h2Home.textContent = `Welcome ${dataProfile[0].name}`;
+  h2Home.textContent = `Welcome ${dataProfile.name}`;
 
   const divH3Trilogy = document.createElement('div');
   divH3Trilogy.classList.add('div_h3_trilogy', 'flex_container');

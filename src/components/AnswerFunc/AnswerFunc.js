@@ -105,25 +105,3 @@ export const activeEnter = () => {
   });
 };
 activeEnter();
-
-// !añadir sumar respuesta correcta y que reinicie la numQuestion si salimos a home
-// const selectedAnswer = document.querySelector('.selected');
-
-// const idSelected = parseInt(selectedAnswer.id);
-
-// const checkingAnswer = survey[numQuestion].answers.find(
-//   (element) => element.id === idSelected && element.correct === true
-// );
-
-// if (checkingAnswer) {
-//   questionRight += 1;
-//   console.log('Correct answer!');
-// } else {
-//   console.log('Wrong answer');
-// }
-
-// console.log('Removing event listener');
-// document.removeEventListener('keydown', activeEnter);
-
-// const allAnswers = document.querySelectorAll('.answer');
-// allAnswers.forEach((answer) => answer.classList.remove('selected'));

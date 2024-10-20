@@ -20,14 +20,14 @@ export const createDivBtns = (parentNode, ownClass) => {
   const h2Ttt = document.createElement('h2');
   h2Ttt.className = 'h2_ttt';
   const dataProfile = JSON.parse(localStorage.getItem('myProfile'));
-  h2Ttt.textContent = `Hola, ${dataProfile[0].name}`;
+  h2Ttt.textContent = `Hola, ${dataProfile.name}`;
 
   const btnProfile = document.createElement('div');
   btnProfile.classList.add('btn_profile', 'flex_container');
   const imgProfile = document.createElement('img');
 
   const urlSticker = stickers.find(
-    (sticker) => sticker.value === parseInt(dataProfile[0].sticker)
+    (sticker) => sticker.value === parseInt(dataProfile.sticker)
   );
 
   imgProfile.src = urlSticker.url;

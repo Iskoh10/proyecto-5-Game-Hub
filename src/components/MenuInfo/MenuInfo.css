@@ -85,7 +85,7 @@
 .ttt_btn:hover,
 .gw_btn:hover,
 .møm_btn:hover {
-  font-size: 24px;
+  font-size: var(--isc-fs-m);
   font-weight: var(--isc-fw-1);
 }
 
