@@ -64,7 +64,7 @@ section.section_gw {
   display: var(--isc-d-grid);
   grid-template-columns: repeat(4, 150px);
   grid-template-rows: repeat(4, 150px);
-  background-image: url('public/assets/bgCard.jpeg');
+  background-image: url('/assets/bgCard.jpeg');
   background-position: center center;
   user-select: none;
 }
