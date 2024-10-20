@@ -41,7 +41,7 @@ export const createHomePage = () => {
     createTicTacToe();
   });
   const imgTtt = document.createElement('img');
-  imgTtt.src = 'public/assets/tictactoegame.svg';
+  imgTtt.src = '/assets/tictactoegame.svg';
 
   sectionTicTacToe.appendChild(imgTtt);
 
@@ -52,7 +52,7 @@ export const createHomePage = () => {
   });
 
   const imgGm = document.createElement('img');
-  imgGm.src = 'public/assets/gwgame.png';
+  imgGm.src = '/assets/gwgame.png';
 
   sectionGmoWorld.appendChild(imgGm);
 
@@ -62,7 +62,7 @@ export const createHomePage = () => {
     createMøm();
   });
   const imgMøm = document.createElement('img');
-  imgMøm.src = 'public/assets/mømgame.svg';
+  imgMøm.src = '/assets/mømgame.svg';
 
   sectionMøm.appendChild(imgMøm);
 
