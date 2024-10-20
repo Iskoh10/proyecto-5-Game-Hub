@@ -53,7 +53,7 @@ export const answerFunc = () => {
   for (let i = 0; i < answers.length; i++) {
     answers[i].addEventListener('click', () => {
       currentIndex = i;
-      SelectionSound.play();
+      MoveSound.play();
       updateCursor(currentIndex);
       activeEnter();
     });
