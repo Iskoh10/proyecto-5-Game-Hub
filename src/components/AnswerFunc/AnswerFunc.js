@@ -29,7 +29,7 @@ export const answerFunc = () => {
     });
   };
 
-  const MoveSound = new Audio('public/assets/moveCursor.mp3');
+  const MoveSound = new Audio('/assets/moveCursor.mp3');
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown') {
@@ -49,7 +49,7 @@ export const toRestartScore = () => {
   questionRight = 0;
 };
 
-const SelectionSound = new Audio('public/assets/selection.mp3');
+const SelectionSound = new Audio('/assets/selection.mp3');
 export let questionRight = 0;
 
 export const sumScore = (enter = 0) => {

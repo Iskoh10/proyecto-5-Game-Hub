@@ -39,7 +39,7 @@ export const createMøm = () => {
     setTimeout(() => {
       const unsheathe = document.querySelector('#sword');
       unsheathe.classList.add('unsheathe');
-      const yourPlace = new Audio('public/assets/yourplace.mp3');
+      const yourPlace = new Audio('/assets/yourplace.mp3');
 
       yourPlace.play();
     }, 1000);
@@ -83,7 +83,7 @@ export const createMøm = () => {
 
     const imgSword = document.createElement('img');
     imgSword.id = 'sword';
-    imgSword.src = 'public/assets/sword.png';
+    imgSword.src = '/assets/sword.png';
 
     containerImg.appendChild(imgSword);
 
@@ -226,7 +226,7 @@ export const toFinish = (completed) => {
       const divCloud = document.createElement('div');
       divCloud.classList.add('div_cloud', 'flex_container');
       const cloudImg = document.createElement('img');
-      cloudImg.src = 'public/assets/cloud.webp';
+      cloudImg.src = '/assets/cloud.webp';
 
       divCloud.appendChild(cloudImg);
 

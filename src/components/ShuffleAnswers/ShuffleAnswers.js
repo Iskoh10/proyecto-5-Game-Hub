@@ -36,7 +36,7 @@ export const shuffleAnswers = (numQuestion = 0) => {
       const cursor = document.createElement('span');
       cursor.className = 'cursor';
       const imgCursor = document.createElement('img');
-      imgCursor.src = 'public/assets/cursor.png';
+      imgCursor.src = '/assets/cursor.png';
       cursor.appendChild(imgCursor);
 
       answerOption.appendChild(cursor);
