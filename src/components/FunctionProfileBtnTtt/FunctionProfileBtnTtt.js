@@ -10,7 +10,6 @@ export const functionalityProfileBtn = (btnProfile) => {
 const showDataProfile = () => {
   toInactivateStartBtn();
   const dataProfile = document.querySelector('.data_profile');
-  //! añadir resultados en una unica variable en el localstorage "tictactoe" tipo objeto [{won: , lost: , draw:}]??
 
   if (!dataProfile) {
     toDrawData();

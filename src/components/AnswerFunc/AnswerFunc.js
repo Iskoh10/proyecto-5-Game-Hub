@@ -2,6 +2,8 @@ import { survey } from '../../data/survey';
 import { createMøm, toFinish } from '../../pages/Møm/Møm';
 import { shuffleAnswers } from '../ShuffleAnswers/ShuffleAnswers';
 
+import './AnswerFunc.css';
+
 let numQuestion = 0;
 
 export const restartValue = (value, go) => {
@@ -16,48 +18,63 @@ export const answerFunc = () => {
   let currentIndex = 0;
   const answers = document.querySelectorAll('.answer');
 
-  const updateCursor = (index) => {
-    answers.forEach((answer, i) => {
-      const cursor = answer.querySelector('.cursor');
-      if (i === index) {
-        cursor.style.visibility = 'visible';
-        answer.classList.add('selected');
-      } else {
-        cursor.style.visibility = 'hidden';
-        answer.classList.remove('selected');
-      }
-    });
-  };
+  // const updateCursor = (index) => {
+  //   answers.forEach((answer, i) => {
+  //     const cursor = answer.querySelector('.cursor');
+  //     if (i === index) {
+  //       cursor.style.visibility = 'visible';
+  //       answer.classList.add('selected');
+  //     } else {
+  //       cursor.style.visibility = 'hidden';
+  //       answer.classList.remove('selected');
+  //     }
+  //   });
+  // };
 
+  //! Eliminar todo lo de teclado e implementarlo con el click
   const MoveSound = new Audio('/assets/moveCursor.mp3');
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown') {
-      currentIndex = (currentIndex + 1) % answers.length;
-      MoveSound.play();
-    } else if (e.key === 'ArrowUp') {
-      currentIndex = (currentIndex - 1 + answers.length) % answers.length;
-      MoveSound.play();
-    }
-    updateCursor(currentIndex);
-  });
+  const SelectionSound = new Audio('/assets/selection.mp3');
 
-  updateCursor(currentIndex);
-
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('answer')) {
-      console.log('hola');
-    }
-  });
-
-  for (let i = 0; i < answers.length; i++) {
-    answers[i].addEventListener('click', () => {
-      currentIndex = i;
+  answers.forEach((answer) => {
+    answer.addEventListener('mouseover', () => {
       MoveSound.play();
-      updateCursor(currentIndex);
-      activeEnter();
     });
-  }
+
+    answer.addEventListener('click', (e) => {
+      SelectionSound.play();
+      e.target.classList.add('selected');
+      chosenAnswer();
+    });
+  });
+
+  // document.addEventListener('keydown', (e) => {
+  //   if (e.key === 'ArrowDown') {
+  //     currentIndex = (currentIndex + 1) % answers.length;
+  //     MoveSound.play();
+  //   } else if (e.key === 'ArrowUp') {
+  //     currentIndex = (currentIndex - 1 + answers.length) % answers.length;
+  //     MoveSound.play();
+  //   }
+  //   updateCursor(currentIndex);
+  // });
+
+  // updateCursor(currentIndex);
+
+  // document.addEventListener('click', (e) => {
+  //   if (e.target.classList.contains('answer')) {
+  //   }
+  // });
+
+  // for (let i = 0; i < answers.length; i++) {
+  //   answers[i].addEventListener('dlbclick', () => {
+  //     currentIndex = i;
+  //     MoveSound.play();
+  //     updateCursor(currentIndex);
+  //     clickCount++;
+  //     activeEnter();
+  //   });
+  // }
 };
 
 export const toRestartScore = () => {
@@ -81,80 +98,113 @@ export const sumScore = (enter = 0) => {
   }
 };
 
-export const activeEnter = () => {
-  document.body.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      SelectionSound.play();
+export const chosenAnswer = () => {
+  const selectedAnswer = document.querySelector('.selected');
+  const idSelected = parseInt(selectedAnswer.id);
 
-      const selectedAnswer = document.querySelector('.selected');
-      const idSelected = parseInt(selectedAnswer.id);
+  const checkingAnswer = survey[numQuestion].answers.find(
+    (element) => element.id === idSelected && element.correct === true
+  );
 
-      const checkingAnswer = survey[numQuestion].answers.find(
-        (element) => element.id === idSelected && element.correct === true
-      );
+  if (checkingAnswer) {
+    questionRight += 1;
+    sumScore(1);
+    console.log('Correct answer!');
+  } else {
+    console.log('Wrong answer');
+  }
 
-      if (checkingAnswer) {
-        questionRight += 1;
-        sumScore(1);
-        console.log('Correct answer!');
-      } else {
-        console.log('Wrong answer');
-      }
+  console.log(survey.length);
+  if (numQuestion < survey.length - 1) {
+    numQuestion += 1;
+    shuffleAnswers(numQuestion);
+  } else {
+    console.log(
+      'Congratulations, you completed the questionnaire! Your score: ' +
+        questionRight
+    );
+    toFinish('completed');
+  }
 
-      console.log(survey.length);
-      if (numQuestion < survey.length - 1) {
-        numQuestion += 1;
-        shuffleAnswers(numQuestion);
-      } else {
-        console.log(
-          'Congratulations, you completed the questionnaire! Your score: ' +
-            questionRight
-        );
-        toFinish('completed');
-      }
-
-      if (numQuestion === 25) {
-        toFinish(completed);
-      }
-    }
-  });
-
-  // En movil y tablet
-  const answerElements = document.querySelectorAll('.answer');
-  answerElements.forEach((answer) => {
-    answer.addEventListener('click', () => {
-      SelectionSound.play();
-
-      const idSelected = parseInt(answer.id);
-
-      const checkingAnswer = survey[numQuestion].answers.find(
-        (element) => element.id === idSelected && element.correct === true
-      );
-
-      if (checkingAnswer) {
-        questionRight += 1;
-        sumScore(1);
-        console.log('Correct answer!');
-      } else {
-        console.log('Wrong answer');
-      }
-
-      console.log(survey.length);
-      if (numQuestion < survey.length - 1) {
-        numQuestion += 1;
-        shuffleAnswers(numQuestion);
-      } else {
-        console.log(
-          'Congratulations, you completed the questionnaire! Your score: ' +
-            questionRight
-        );
-        toFinish('completed');
-      }
-
-      if (numQuestion === 25) {
-        toFinish(completed);
-      }
-    });
-  });
+  if (numQuestion === 25) {
+    toFinish(completed);
+  }
 };
-activeEnter();
+
+// export const activeEnter = () => {
+//   document.body.addEventListener('keydown', (e) => {
+//     if (e.key === 'Enter') {
+//       SelectionSound.play();
+
+//       const selectedAnswer = document.querySelector('.selected');
+//       const idSelected = parseInt(selectedAnswer.id);
+
+//       const checkingAnswer = survey[numQuestion].answers.find(
+//         (element) => element.id === idSelected && element.correct === true
+//       );
+
+//       if (checkingAnswer) {
+//         questionRight += 1;
+//         sumScore(1);
+//         console.log('Correct answer!');
+//       } else {
+//         console.log('Wrong answer');
+//       }
+
+//       console.log(survey.length);
+//       if (numQuestion < survey.length - 1) {
+//         numQuestion += 1;
+//         shuffleAnswers(numQuestion);
+//       } else {
+//         console.log(
+//           'Congratulations, you completed the questionnaire! Your score: ' +
+//             questionRight
+//         );
+//         toFinish('completed');
+//       }
+
+//       if (numQuestion === 25) {
+//         toFinish(completed);
+//       }
+//     }
+//   });
+
+//   // En movil y tablet
+//   const answerElements = document.querySelectorAll('.answer');
+//   answerElements.forEach((answer) => {
+//     answer.addEventListener('click', () => {
+//       SelectionSound.play();
+
+//       const idSelected = parseInt(answer.id);
+
+//       const checkingAnswer = survey[numQuestion].answers.find(
+//         (element) => element.id === idSelected && element.correct === true
+//       );
+
+//       if (checkingAnswer) {
+//         questionRight += 1;
+//         sumScore(1);
+//         console.log('Correct answer!');
+//       } else {
+//         console.log('Wrong answer');
+//       }
+
+//       console.log(survey.length);
+//       if (numQuestion < survey.length - 1) {
+//         numQuestion += 1;
+//         shuffleAnswers(numQuestion);
+//       } else {
+//         console.log(
+//           'Congratulations, you completed the questionnaire! Your score: ' +
+//             questionRight
+//         );
+//         toFinish('completed');
+//       }
+
+//       if (numQuestion === 25) {
+//         toFinish(completed);
+//       }
+//     });
+//   });
+// };
+// activeEnter();

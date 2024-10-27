@@ -79,6 +79,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -106,6 +107,8 @@ export const functionalityTtt = (numClick, divboxes) => {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -123,6 +126,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -149,6 +153,8 @@ export const functionalityTtt = (numClick, divboxes) => {
         gameResult('You Win!');
         startBtn.textContent = 'Start';
         startButton();
+        functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -166,6 +172,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -194,6 +201,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -211,6 +219,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -239,6 +248,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -256,6 +266,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -284,6 +295,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -301,6 +313,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -329,6 +342,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -346,6 +360,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -373,6 +388,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -390,6 +406,7 @@ export const functionalityTtt = (numClick, divboxes) => {
         startBtn.textContent = 'Start';
         startButton();
         functionalityProfileBtn(btnProfile);
+
         for (const divBox of divboxes) {
           divBox.removeEventListener('click', toDraw);
         }
@@ -408,6 +425,7 @@ export const functionalityTtt = (numClick, divboxes) => {
       startBtn.textContent = 'Start';
       startButton();
       functionalityProfileBtn(btnProfile);
+
       for (const divBox of divboxes) {
         divBox.removeEventListener('click', toDraw);
       }

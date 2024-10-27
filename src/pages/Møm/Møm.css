@@ -164,6 +164,8 @@ div.div_answers {
   align-items: var(--isc-ai-fs);
   gap: var(--isc-gap-s);
   font-size: var(--isc-fs-m);
+  transition: text-decoration 0.3s ease;
+  cursor: pointer;
 }
 
 .cursor {
