@@ -23,7 +23,6 @@ export const createGmoW = () => {
   selectLevel.id = 'level';
   selectLevel.addEventListener('input', () => {
     if (selectLevel.value === 'beginner') {
-      console.log(selectLevel.value);
       divContainerGW.style.gridTemplateColumns = 'repeat(4, 150px)';
       divContainerGW.style.gridTemplateRows = 'repeat(4, 150px)';
       levelSel(8);
@@ -35,19 +34,16 @@ export const createGmoW = () => {
         levelSel(10);
         blockSel();
         const cards = document.querySelectorAll('.card');
-        console.log(cards);
         for (const card of cards) {
           card.classList.add('amateur');
         }
       } else if (window.innerWidth > 800) {
-        console.log(selectLevel.value);
         divContainerGW.style.gridTemplateColumns = 'repeat(5, 150px)';
         divContainerGW.style.gridTemplateRows = 'repeat(4, 150px)';
         levelSel(10);
         blockSel();
       }
     } else if (selectLevel.value === 'skilled') {
-      console.log(selectLevel.value);
       sectionGW.style.width = '950px';
       divContainerGW.style.gridTemplateColumns = 'repeat(6, 150px)';
       divContainerGW.style.gridTemplateRows = 'repeat(4, 150px)';
@@ -148,9 +144,7 @@ export const createGmoW = () => {
   };
 
   const checkWin = () => {
-    console.log(selectedEmojiDu.length);
     const divMatched = document.querySelectorAll('.matched');
-    console.log(divMatched.length);
     if (selectedEmojiDu.length === divMatched.length) {
       let gamesWin = localStorage.getItem('games_won')
         ? parseInt(localStorage.getItem('games_won'))
@@ -218,10 +212,7 @@ export const createGmoW = () => {
         if (selectedByUser.length === 2) {
           document.body.style.pointerEvents = 'none';
 
-          console.log('compruebo');
           if (selectedByUser[0].textContent === selectedByUser[1].textContent) {
-            console.log(selectedByUser);
-            console.log('Enhorabuena Acertaste');
             setTimeout(() => {
               selectedByUser[0].classList.add('matched');
               selectedByUser[1].classList.add('matched');
@@ -232,7 +223,6 @@ export const createGmoW = () => {
               checkWin();
             }, 500);
           } else {
-            console.log('Fallaste');
             setTimeout(() => {
               selectedByUser[0].classList.toggle('flip');
               selectedByUser[1].classList.toggle('flip');

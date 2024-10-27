@@ -1,12 +1,6 @@
 import { createDivBtns } from '../../components/DivBtns/DivBtns';
-import { functionalityProfileBtn } from '../../components/FunctionProfileBtnTtt/FunctionProfileBtnTtt';
-import {
-  startButton,
-  toActivateStartBtn,
-  toInactivateStartBtn
-} from '../../components/FunctionStartBtnTtt/FunctionStartBtnTtt';
-import { stickers } from '../../data/stickers';
-import { createHomePage } from '../Home/Home';
+import { startButton } from '../../components/FunctionStartBtnTtt/FunctionStartBtnTtt';
+
 import './Tictactoe.css';
 
 export const createTicTacToe = () => {

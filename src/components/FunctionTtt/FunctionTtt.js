@@ -47,13 +47,12 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox1.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox2.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox3.style.backgroundColor = 'var(--isc-hp-color7)';
-      console.log('Partida ganada por: ' + divbox1.textContent);
+
       if (divbox1.textContent === 'X') {
         if (!localStorage.getItem('won')) {
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
-          console.log('sumar 1');
           wonGame = parseInt(wonGame) + 1;
           const wonGames = localStorage.setItem('won', wonGame);
         }
@@ -71,7 +70,6 @@ export const functionalityTtt = (numClick, divboxes) => {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
           let lostGame = localStorage.getItem('lost');
-          console.log('sumar 1');
           lostGame = parseInt(lostGame) + 1;
           const lostGames = localStorage.setItem('lost', lostGame);
         }
@@ -92,14 +90,12 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox1.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox4.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox7.style.backgroundColor = 'var(--isc-hp-color7)';
-      console.log('Partida ganada por: ' + divbox1.textContent);
+
       if (divbox1.textContent === 'X') {
         if (!localStorage.getItem('won')) {
-          console.log('Creamos tu perfil');
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
-          console.log('sumar 1');
           wonGame = parseInt(wonGame) + 1;
           const wonGames = localStorage.setItem('won', wonGame);
         }
@@ -117,7 +113,6 @@ export const functionalityTtt = (numClick, divboxes) => {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
           let lostGame = localStorage.getItem('lost');
-          console.log('sumar 1');
           lostGame = parseInt(lostGame) + 1;
           const lostGames = localStorage.setItem('lost', lostGame);
         }
@@ -139,13 +134,12 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox1.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox5.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox9.style.backgroundColor = 'var(--isc-hp-color7)';
-      console.log('Partida ganada por: ' + divbox1.textContent);
+
       if (divbox1.textContent === 'X') {
         if (!localStorage.getItem('won')) {
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
-          console.log('sumar 1');
           wonGame = parseInt(wonGame) + 1;
           const wonGames = localStorage.setItem('won', wonGame);
         }
@@ -163,7 +157,6 @@ export const functionalityTtt = (numClick, divboxes) => {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
           let lostGame = localStorage.getItem('lost');
-          console.log('sumar 1');
           lostGame = parseInt(lostGame) + 1;
           const lostGames = localStorage.setItem('lost', lostGame);
         }
@@ -185,14 +178,12 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox2.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox5.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox8.style.backgroundColor = 'var(--isc-hp-color7)';
-      console.log('Partida ganada por: ' + divbox2.textContent);
+
       if (divbox2.textContent === 'X') {
         if (!localStorage.getItem('won')) {
-          console.log('Creamos tu perfil');
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
-          console.log('sumar 1');
           wonGame = parseInt(wonGame) + 1;
           const wonGames = localStorage.setItem('won', wonGame);
         }
@@ -210,7 +201,6 @@ export const functionalityTtt = (numClick, divboxes) => {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
           let lostGame = localStorage.getItem('lost');
-          console.log('sumar 1');
           lostGame = parseInt(lostGame) + 1;
           const lostGames = localStorage.setItem('lost', lostGame);
         }
@@ -232,14 +222,12 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox3.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox6.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox9.style.backgroundColor = 'var(--isc-hp-color7)';
-      console.log('Partida ganada por: ' + divbox3.textContent);
+
       if (divbox3.textContent === 'X') {
         if (!localStorage.getItem('won')) {
-          console.log('Creamos tu perfil');
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
-          console.log('sumar 1');
           wonGame = parseInt(wonGame) + 1;
           const wonGames = localStorage.setItem('won', wonGame);
         }
@@ -257,7 +245,6 @@ export const functionalityTtt = (numClick, divboxes) => {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
           let lostGame = localStorage.getItem('lost');
-          console.log('sumar 1');
           lostGame = parseInt(lostGame) + 1;
           const lostGames = localStorage.setItem('lost', lostGame);
         }
@@ -279,14 +266,12 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox3.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox5.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox7.style.backgroundColor = 'var(--isc-hp-color7)';
-      console.log('Partida ganada por: ' + divbox3.textContent);
+
       if (divbox3.textContent === 'X') {
         if (!localStorage.getItem('won')) {
-          console.log('Creamos tu perfil');
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
-          console.log('sumar 1');
           wonGame = parseInt(wonGame) + 1;
           const wonGames = localStorage.setItem('won', wonGame);
         }
@@ -304,7 +289,6 @@ export const functionalityTtt = (numClick, divboxes) => {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
           let lostGame = localStorage.getItem('lost');
-          console.log('sumar 1');
           lostGame = parseInt(lostGame) + 1;
           const lostGames = localStorage.setItem('lost', lostGame);
         }
@@ -326,14 +310,12 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox4.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox5.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox6.style.backgroundColor = 'var(--isc-hp-color7)';
-      console.log('Partida ganada por: ' + divbox4.textContent);
+
       if (divbox4.textContent === 'X') {
         if (!localStorage.getItem('won')) {
-          console.log('Creamos tu perfil');
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
-          console.log('sumar 1');
           wonGame = parseInt(wonGame) + 1;
           const wonGames = localStorage.setItem('won', wonGame);
         }
@@ -351,7 +333,6 @@ export const functionalityTtt = (numClick, divboxes) => {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
           let lostGame = localStorage.getItem('lost');
-          console.log('sumar 1');
           lostGame = parseInt(lostGame) + 1;
           const lostGames = localStorage.setItem('lost', lostGame);
         }
@@ -373,14 +354,12 @@ export const functionalityTtt = (numClick, divboxes) => {
       divbox7.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox8.style.backgroundColor = 'var(--isc-hp-color7)';
       divbox9.style.backgroundColor = 'var(--isc-hp-color7)';
-      console.log('Partida ganada por: ' + divbox7.textContent);
+
       if (divbox7.textContent === 'X') {
         if (!localStorage.getItem('won')) {
-          console.log('Creamos tu perfil');
           const wonGames = localStorage.setItem('won', 1);
         } else {
           let wonGame = localStorage.getItem('won');
-          console.log('sumar 1');
           wonGame = parseInt(wonGame) + 1;
           const wonGames = localStorage.setItem('won', wonGame);
         }
@@ -397,7 +376,6 @@ export const functionalityTtt = (numClick, divboxes) => {
           const lostGames = localStorage.setItem('lost', 1);
         } else {
           let lostGame = localStorage.getItem('lost');
-          console.log('sumar 1');
           lostGame = parseInt(lostGame) + 1;
           const lostGames = localStorage.setItem('lost', lostGame);
         }
@@ -416,7 +394,6 @@ export const functionalityTtt = (numClick, divboxes) => {
         const drawGames = localStorage.setItem('draw', 1);
       } else {
         let drawGame = localStorage.getItem('draw');
-        console.log('sumar 1');
         drawGame = parseInt(drawGame) + 1;
         const drawGames = localStorage.setItem('draw', drawGame);
       }

@@ -183,12 +183,10 @@ export const createMøm = () => {
 };
 
 export const toRestart = () => {
-  console.log('Reiniciar');
   restartValue(0, true);
 };
 
 export const toFinish = (completed) => {
-  console.log('Acabar');
   const overlay = document.createElement('div');
   overlay.className = 'overlay';
   const finalMessage = document.createElement('div');

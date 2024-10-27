@@ -5,8 +5,3 @@
 .answer:hover {
   text-decoration: underline;
 }
-
-span.cursor {
-  position: var(--isc-p-abs);
-  left: 30px;
-}
